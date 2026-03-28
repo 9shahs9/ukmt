@@ -1,0 +1,297 @@
+{
+  "jk-2015-q": {
+    "year": 2015,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/jk-2015-q/page-1.png",
+      "/images/papers/jk-2015-q/page-2.png",
+      "/images/papers/jk-2015-q/page-3.png",
+      "/images/papers/jk-2015-q/page-4.png"
+    ]
+  },
+  "jk-2016-q": {
+    "year": 2016,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/jk-2016-q/page-1.png",
+      "/images/papers/jk-2016-q/page-2.png",
+      "/images/papers/jk-2016-q/page-3.png",
+      "/images/papers/jk-2016-q/page-4.png"
+    ]
+  },
+  "jk-2017-q": {
+    "year": 2017,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/jk-2017-q/page-1.png",
+      "/images/papers/jk-2017-q/page-2.png",
+      "/images/papers/jk-2017-q/page-3.png",
+      "/images/papers/jk-2017-q/page-4.png"
+    ]
+  },
+  "jk-2018-q": {
+    "year": 2018,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/jk-2018-q/page-1.png",
+      "/images/papers/jk-2018-q/page-2.png",
+      "/images/papers/jk-2018-q/page-3.png",
+      "/images/papers/jk-2018-q/page-4.png"
+    ]
+  },
+  "jk-2019-q": {
+    "year": 2019,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/jk-2019-q/page-1.png",
+      "/images/papers/jk-2019-q/page-2.png",
+      "/images/papers/jk-2019-q/page-3.png",
+      "/images/papers/jk-2019-q/page-4.png"
+    ]
+  },
+  "jmc-2015-q": {
+    "year": 2015,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2015-q/page-1.png",
+      "/images/papers/jmc-2015-q/page-2.png",
+      "/images/papers/jmc-2015-q/page-3.png",
+      "/images/papers/jmc-2015-q/page-4.png"
+    ]
+  },
+  "jmc-2016-q": {
+    "year": 2016,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2016-q/page-1.png",
+      "/images/papers/jmc-2016-q/page-2.png",
+      "/images/papers/jmc-2016-q/page-3.png",
+      "/images/papers/jmc-2016-q/page-4.png"
+    ]
+  },
+  "jmc-2017-q": {
+    "year": 2017,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2017-q/page-1.png",
+      "/images/papers/jmc-2017-q/page-2.png",
+      "/images/papers/jmc-2017-q/page-3.png",
+      "/images/papers/jmc-2017-q/page-4.png"
+    ]
+  },
+  "jmc-2018-q": {
+    "year": 2018,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2018-q/page-1.png",
+      "/images/papers/jmc-2018-q/page-2.png",
+      "/images/papers/jmc-2018-q/page-3.png",
+      "/images/papers/jmc-2018-q/page-4.png"
+    ]
+  },
+  "jmc-2019-q": {
+    "year": 2019,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2019-q/page-1.png",
+      "/images/papers/jmc-2019-q/page-2.png",
+      "/images/papers/jmc-2019-q/page-3.png",
+      "/images/papers/jmc-2019-q/page-4.png"
+    ]
+  },
+  "jmc-2020-q": {
+    "year": 2020,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2020-q/page-1.png",
+      "/images/papers/jmc-2020-q/page-2.png",
+      "/images/papers/jmc-2020-q/page-3.png",
+      "/images/papers/jmc-2020-q/page-4.png"
+    ]
+  },
+  "jmc-2021-paper": {
+    "year": 2021,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2021-paper/page-1.png",
+      "/images/papers/jmc-2021-paper/page-2.png",
+      "/images/papers/jmc-2021-paper/page-3.png",
+      "/images/papers/jmc-2021-paper/page-4.png"
+    ]
+  },
+  "jmc-2022-paper": {
+    "year": 2022,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2022-paper/page-1.png",
+      "/images/papers/jmc-2022-paper/page-2.png",
+      "/images/papers/jmc-2022-paper/page-3.png",
+      "/images/papers/jmc-2022-paper/page-4.png"
+    ]
+  },
+  "jmc-2023-paper": {
+    "year": 2023,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2023-paper/page-1.png",
+      "/images/papers/jmc-2023-paper/page-2.png",
+      "/images/papers/jmc-2023-paper/page-3.png",
+      "/images/papers/jmc-2023-paper/page-4.png"
+    ]
+  },
+  "jmc-2024-question-paper-4": {
+    "year": 2024,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2024-question-paper-4/page-1.png",
+      "/images/papers/jmc-2024-question-paper-4/page-2.png",
+      "/images/papers/jmc-2024-question-paper-4/page-3.png",
+      "/images/papers/jmc-2024-question-paper-4/page-4.png"
+    ]
+  },
+  "jmc-2025-paper": {
+    "year": 2025,
+    "track": "JMC",
+    "pages": [
+      "/images/papers/jmc-2025-paper/page-1.png",
+      "/images/papers/jmc-2025-paper/page-2.png",
+      "/images/papers/jmc-2025-paper/page-3.png",
+      "/images/papers/jmc-2025-paper/page-4.png"
+    ]
+  },
+  "jmo-2015-q": {
+    "year": 2015,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2015-q/page-1.png",
+      "/images/papers/jmo-2015-q/page-2.png",
+      "/images/papers/jmo-2015-q/page-3.png"
+    ]
+  },
+  "jmo-2016-q": {
+    "year": 2016,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2016-q/page-1.png",
+      "/images/papers/jmo-2016-q/page-2.png",
+      "/images/papers/jmo-2016-q/page-3.png"
+    ]
+  },
+  "jmo-2017-q": {
+    "year": 2017,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2017-q/page-1.png",
+      "/images/papers/jmo-2017-q/page-2.png",
+      "/images/papers/jmo-2017-q/page-3.png"
+    ]
+  },
+  "jmo-2018-q": {
+    "year": 2018,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2018-q/page-1.png",
+      "/images/papers/jmo-2018-q/page-2.png"
+    ]
+  },
+  "jmo-2019-q": {
+    "year": 2019,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2019-q/page-1.png",
+      "/images/papers/jmo-2019-q/page-2.png",
+      "/images/papers/jmo-2019-q/page-3.png"
+    ]
+  },
+  "jmo-2021-question-paper-1": {
+    "year": 2021,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2021-question-paper-1/page-1.png",
+      "/images/papers/jmo-2021-question-paper-1/page-2.png",
+      "/images/papers/jmo-2021-question-paper-1/page-3.png"
+    ]
+  },
+  "jmo-2022-paper-1": {
+    "year": 2022,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2022-paper-1/page-1.png",
+      "/images/papers/jmo-2022-paper-1/page-2.png",
+      "/images/papers/jmo-2022-paper-1/page-3.png"
+    ]
+  },
+  "jmo-2024-questions": {
+    "year": 2024,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2024-questions/page-1.png"
+    ]
+  },
+  "jmo-2025-paper": {
+    "year": 2025,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/jmo-2025-paper/page-1.png",
+      "/images/papers/jmo-2025-paper/page-2.png",
+      "/images/papers/jmo-2025-paper/page-3.png"
+    ]
+  },
+  "junior-kangaroo-2021-paper-1": {
+    "year": 2021,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/junior-kangaroo-2021-paper-1/page-1.png",
+      "/images/papers/junior-kangaroo-2021-paper-1/page-2.png",
+      "/images/papers/junior-kangaroo-2021-paper-1/page-3.png",
+      "/images/papers/junior-kangaroo-2021-paper-1/page-4.png"
+    ]
+  },
+  "junior-kangaroo-2022-paper": {
+    "year": 2022,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/junior-kangaroo-2022-paper/page-1.png",
+      "/images/papers/junior-kangaroo-2022-paper/page-2.png",
+      "/images/papers/junior-kangaroo-2022-paper/page-3.png",
+      "/images/papers/junior-kangaroo-2022-paper/page-4.png"
+    ]
+  },
+  "junior-kangaroo-2024-paper": {
+    "year": 2024,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/junior-kangaroo-2024-paper/page-1.png",
+      "/images/papers/junior-kangaroo-2024-paper/page-2.png",
+      "/images/papers/junior-kangaroo-2024-paper/page-3.png",
+      "/images/papers/junior-kangaroo-2024-paper/page-4.png"
+    ]
+  },
+  "junior-kangaroo-2025-paper": {
+    "year": 2025,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/junior-kangaroo-2025-paper/page-1.png",
+      "/images/papers/junior-kangaroo-2025-paper/page-2.png"
+    ]
+  },
+  "junior-kangaroo-paper-2023-3": {
+    "year": 2023,
+    "track": "Junior Kangaroo",
+    "pages": [
+      "/images/papers/junior-kangaroo-paper-2023-3/page-1.png",
+      "/images/papers/junior-kangaroo-paper-2023-3/page-2.png",
+      "/images/papers/junior-kangaroo-paper-2023-3/page-3.png",
+      "/images/papers/junior-kangaroo-paper-2023-3/page-4.png"
+    ]
+  },
+  "junior-mathematical-olympiad-2023-paper-2": {
+    "year": 2023,
+    "track": "JMO",
+    "pages": [
+      "/images/papers/junior-mathematical-olympiad-2023-paper-2/page-1.png",
+      "/images/papers/junior-mathematical-olympiad-2023-paper-2/page-2.png",
+      "/images/papers/junior-mathematical-olympiad-2023-paper-2/page-3.png"
+    ]
+  }
+}

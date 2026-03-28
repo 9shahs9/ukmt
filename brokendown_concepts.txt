@@ -1,0 +1,45 @@
+To go from zero to mastery of the concepts required for the Junior Mathematical Challenge (JMC), Junior Kangaroo, and Junior Mathematical Olympiad (JMO), students should follow a structured 4-week program focusing on mental agility, geometric deduction, algebraic modeling, and the rigorous art of proof.
+Week 1: Number Theory and Arithmetic Foundations
+Focus on numerical properties and mental calculations, as calculators and measuring instruments are strictly forbidden in all these tests
+.
+Primes and Factors: Master the definition of prime numbers and practice identifying them up to 100
+. Learn to use prime factorization to identify all factors of a number
+.
+Divisibility Rules: Memorize and apply rules for 3, 4, 9, and 11 to solve complex multiplication and division problems quickly
+.
+Fractions, Decimals, and Percentages: Practice converting between these forms and performing operations without a calculator
+.
+Powers and Roots: Mastery of square and cube numbers is essential for "crossnumber" puzzles and sequence problems
+.
+Week 2: Geometry and Measurement
+Study the properties of shapes, moving beyond simple measurement to logical deduction.
+Angle Facts: Master the theorems for angles on a straight line, vertically opposite angles, and interior/exterior angles of triangles and polygons
+.
+Area and Perimeter: Practice calculating these for squares, rectangles, and triangles, as well as complex shaded regions formed by overlapping shapes
+.
+Symmetry and Nets: Develop the ability to visualize rotational and reflectional symmetry and identify which 2D nets can form 3D solids like cubes
+.
+Circles and Semicircles: Learn to calculate areas and perimeters of circles, often leaving answers in terms of π
+.
+Week 3: Algebra, Sequences, and Logical Reasoning
+Learn to translate word problems into mathematical models and solve puzzles.
+Equations: Practice forming and solving linear and simultaneous equations from text descriptions, such as those involving ages or the costs of items
+.
+Sequences: Recognize and define rules for number sequences, including those where each term is the sum of previous terms
+.
+Logic Puzzles: Solve "magic squares" where rows and columns sum to the same total, and practice "truth-teller and liar" logic problems
+.
+Speed, Distance, and Time: Mastery of these calculations is a frequent requirement for word problems
+.
+Week 4: Presentation, Proof, and Olympiad Mastery
+The final week transitions from finding the correct answer to proving why it is correct, which is the core requirement of the JMO Section B
+.
+Full Written Explanations: Practice writing solutions in extended prose, explaining every logical step rather than just providing a value
+.
+Using Algebra for Proof: Use variables to express connections simply and declare those variables fully (e.g., "Let n be the smallest integer...")
+.
+Proving Uniqueness: Mastery involves showing that your found solution is the only one possible and that all other cases have been eliminated
+.
+Mock Exams: Complete past papers under strict time limits—60 minutes for the JMC/Kangaroo and 2 hours for the JMO—focusing on accuracy over guessing
+.
+Pro Tip: Use the "For Investigation" problems found in extended solution booklets to deepen your understanding of core concepts through further exploration

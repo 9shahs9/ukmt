@@ -1,0 +1,512 @@
+[
+  {
+    "fileName": "jmc-2011-extended.pdf",
+    "year": 2011,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2012-extended.pdf",
+    "year": 2012,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2013-extended.pdf",
+    "year": 2013,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2014-extended.pdf",
+    "year": 2014,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2015-extended.pdf",
+    "year": 2015,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2015-q.pdf",
+    "year": 2015,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2015-s.pdf",
+    "year": 2015,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2015-q.pdf",
+    "year": 2015,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2015-s.pdf",
+    "year": 2015,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2015-q.pdf",
+    "year": 2015,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2015-s.pdf",
+    "year": 2015,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2016-extended.pdf",
+    "year": 2016,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2016-q.pdf",
+    "year": 2016,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2016-s.pdf",
+    "year": 2016,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2016-q.pdf",
+    "year": 2016,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2016-s.pdf",
+    "year": 2016,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2016-sample-solutions.pdf",
+    "year": 2016,
+    "track": "JMO",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "jk-2016-q.pdf",
+    "year": 2016,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2016-s.pdf",
+    "year": 2016,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2017-extended.pdf",
+    "year": 2017,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2017-q.pdf",
+    "year": 2017,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2017-s.pdf",
+    "year": 2017,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2017-q.pdf",
+    "year": 2017,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2017-s.pdf",
+    "year": 2017,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2017-q.pdf",
+    "year": 2017,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2017-s.pdf",
+    "year": 2017,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2018-extended.pdf",
+    "year": 2018,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2018-q.pdf",
+    "year": 2018,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2018-s.pdf",
+    "year": 2018,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMO-Sample-solutions-2018.pdf",
+    "year": 2018,
+    "track": "JMO",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "jmo-2018-q.pdf",
+    "year": 2018,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2018-s.pdf",
+    "year": 2018,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2018-q.pdf",
+    "year": 2018,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2018-s.pdf",
+    "year": 2018,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2019-extended.pdf",
+    "year": 2019,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "jmc-2019-q.pdf",
+    "year": 2019,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmc-2019-s.pdf",
+    "year": 2019,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2019-q.pdf",
+    "year": 2019,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jmo-2019-s.pdf",
+    "year": 2019,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2019-q.pdf",
+    "year": 2019,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "jk-2019-s.pdf",
+    "year": 2019,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMC-2020-extended.pdf",
+    "year": 2020,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "JMC-2020-q.pdf",
+    "year": 2020,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMC-2020-s.pdf",
+    "year": 2020,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMC-2021-Extended-Solutions.pdf",
+    "year": 2021,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "JMC-2021-Solutions.pdf",
+    "year": 2021,
+    "track": "JMC",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMC-2021-paper.pdf",
+    "year": 2021,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMO-2021-Markers-Report.pdf",
+    "year": 2021,
+    "track": "JMO",
+    "kind": "markers-report"
+  },
+  {
+    "fileName": "JMO_2021-question-paper-1.pdf",
+    "year": 2021,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMO_2021_solutions-1.pdf",
+    "year": 2021,
+    "track": "JMO",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "Junior-Kangaroo-2021-paper-1.pdf",
+    "year": 2021,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "Junior-Kangaroo-2021-solutions.pdf",
+    "year": 2021,
+    "track": "Junior Kangaroo",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMC2022__Extended_solutions__web_version__web_version_.pdf",
+    "year": 2022,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "JMC_2022_Paper.pdf",
+    "year": 2022,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMC_2022_Solutions_0.pdf",
+    "year": 2022,
+    "track": "JMC",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMO-2022-Markers-Report.pdf",
+    "year": 2022,
+    "track": "JMO",
+    "kind": "markers-report"
+  },
+  {
+    "fileName": "JMO_2022_Paper-1.pdf",
+    "year": 2022,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMO_2022_Solutions.pdf",
+    "year": 2022,
+    "track": "JMO",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "Junior_Kangaroo_2022_Paper.pdf",
+    "year": 2022,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "Junior_Kangaroo_2022_Solutions-1.pdf",
+    "year": 2022,
+    "track": "Junior Kangaroo",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMC-2023-Extended-Solutions_0.pdf",
+    "year": 2023,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "JMC-2023-Solutions.pdf",
+    "year": 2023,
+    "track": "JMC",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMC-2023_Paper.pdf",
+    "year": 2023,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMO-2023-Markers-Report.pdf",
+    "year": 2023,
+    "track": "JMO",
+    "kind": "markers-report"
+  },
+  {
+    "fileName": "Junior-Mathematical-Olympiad-2023-Paper-2.pdf",
+    "year": 2023,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "Junior-Mathematical-Olympiad-2023-Solutions.pdf",
+    "year": 2023,
+    "track": "JMO",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "Junior-Kangaroo-2023-Solutions-1.pdf",
+    "year": 2023,
+    "track": "Junior Kangaroo",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "Junior-Kangaroo-Paper-2023-3.pdf",
+    "year": 2023,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMC-2024-Extended-Solutions-1.pdf",
+    "year": 2024,
+    "track": "JMC",
+    "kind": "extended-solutions"
+  },
+  {
+    "fileName": "JMC-2024-Question-Paper-4.pdf",
+    "year": 2024,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMC-2024-Solutions-1.pdf",
+    "year": 2024,
+    "track": "JMC",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMO-2024-Questions.pdf",
+    "year": 2024,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMO-2024-Solutions.pdf",
+    "year": 2024,
+    "track": "JMO",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMO2024Report.pdf",
+    "year": 2024,
+    "track": "JMO",
+    "kind": "markers-report"
+  },
+  {
+    "fileName": "Junior_Kangaroo_2024_Paper.pdf",
+    "year": 2024,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "Junior_Kangaroo_2024_Solutions.pdf",
+    "year": 2024,
+    "track": "Junior Kangaroo",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMC-2025-Paper.pdf",
+    "year": 2025,
+    "track": "JMC",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMC-2025-Problem-Comments.pdf",
+    "year": 2025,
+    "track": "JMC",
+    "kind": "comments"
+  },
+  {
+    "fileName": "JMC-2025-Solutions.pdf",
+    "year": 2025,
+    "track": "JMC",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMC-2025-solutions-and-investigations.pdf",
+    "year": 2025,
+    "track": "JMC",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMO-2025-Paper.pdf",
+    "year": 2025,
+    "track": "JMO",
+    "kind": "paper"
+  },
+  {
+    "fileName": "JMO-2025-Solutions.pdf",
+    "year": 2025,
+    "track": "JMO",
+    "kind": "solutions"
+  },
+  {
+    "fileName": "JMO2025_Report.pdf",
+    "year": 2025,
+    "track": "JMO",
+    "kind": "markers-report"
+  },
+  {
+    "fileName": "Junior_Kangaroo_2025_Paper.pdf",
+    "year": 2025,
+    "track": "Junior Kangaroo",
+    "kind": "paper"
+  },
+  {
+    "fileName": "Junior_Kangaroo_2025_Solutions.pdf",
+    "year": 2025,
+    "track": "Junior Kangaroo",
+    "kind": "solutions"
+  }
+]
