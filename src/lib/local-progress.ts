@@ -1,4 +1,5 @@
 import type { PracticeQuestion, PracticeResult, UserProgress } from "@/lib/types";
+import { isFirebaseConfigured, loadCloudProgress, saveCloudProgress } from "@/lib/firebase";
 
 const STORAGE_KEY = "ukmt-progress";
 
@@ -16,22 +17,34 @@ export const defaultProgress = (userId: string): UserProgress => ({
   sprintHistory: [],
 });
 
-export function loadProgress(userId: string): UserProgress {
+/** Load progress: Firestore first, fall back to localStorage */
+export async function loadProgress(userId: string): Promise<UserProgress> {
   if (typeof window === "undefined") return defaultProgress(userId);
+
+  if (isFirebaseConfigured) {
+    try {
+      const cloud = await loadCloudProgress(userId);
+      if (cloud) return { ...defaultProgress(userId), ...cloud };
+    } catch { /* fall through */ }
+  }
+
   const raw = window.localStorage.getItem(`${STORAGE_KEY}:${userId}`);
   if (!raw) return defaultProgress(userId);
-
   try {
-    const parsed = JSON.parse(raw) as UserProgress;
-    return { ...defaultProgress(userId), ...parsed };
+    return { ...defaultProgress(userId), ...JSON.parse(raw) as UserProgress };
   } catch {
     return defaultProgress(userId);
   }
 }
 
-export function saveProgress(progress: UserProgress): void {
+/** Save progress: Firestore + localStorage */
+export async function saveProgress(progress: UserProgress): Promise<void> {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(`${STORAGE_KEY}:${progress.userId}`, JSON.stringify(progress));
+
+  if (isFirebaseConfigured) {
+    try { await saveCloudProgress(progress); } catch { /* silent */ }
+  }
 }
 
 export function updateProgressAfterSprint(

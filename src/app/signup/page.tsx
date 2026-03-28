@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { signInWithEmail } from "@/lib/firebase";
 
 export default function SignupPage() {
   const [name, setName] = useState("");
@@ -19,8 +20,8 @@ export default function SignupPage() {
       setMessage("All fields are required.");
       return;
     }
-    if (password.length < 4) {
-      setMessage("Password must be at least 4 characters.");
+    if (password.length < 6) {
+      setMessage("Password must be at least 6 characters.");
       return;
     }
     if (password !== confirm) {
@@ -28,21 +29,18 @@ export default function SignupPage() {
       return;
     }
 
-    const res = await fetch("/api/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password, name }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      setMessage(data.error ?? "Signup failed.");
-      return;
+    try {
+      const user = await signInWithEmail(email, password);
+      // Update display name if the Firebase user was just created
+      if (user.displayName !== name) {
+        const { updateProfile } = await import("firebase/auth");
+        await updateProfile(user, { displayName: name });
+      }
+      setSuccess(true);
+      setMessage(`Account ready for ${email}. You can now go to the home page.`);
+    } catch (err: unknown) {
+      setMessage(err instanceof Error ? err.message : "Signup failed.");
     }
-
-    setSuccess(true);
-    setMessage(`Account created for ${data.email}. You can now login from the home page.`);
   }
 
   return (

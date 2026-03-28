@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 import { conceptSheets, topicPlan } from "@/data/mastery-plan";
@@ -11,6 +10,13 @@ import {
   saveProgress,
   updateProgressAfterSprint,
 } from "@/lib/local-progress";
+import {
+  isFirebaseConfigured,
+  signInWithEmail,
+  signInWithGoogle,
+  signOutUser,
+  subscribeToAuth,
+} from "@/lib/firebase";
 import { generateForConcept } from "@/lib/question-generator";
 import type { PracticeQuestion, PracticeResult, UserProgress } from "@/lib/types";
 import { MathText } from "@/components/MathText";
@@ -79,23 +85,30 @@ export function SprintApp() {
 
   /* ───── Restore session on mount ───── */
   useEffect(() => {
+    if (isFirebaseConfigured) {
+      // Use Firebase Auth listener
+      const unsub = subscribeToAuth((user) => {
+        if (user) {
+          setUserId(user.uid);
+          setDisplayName(user.displayName ?? user.email?.split("@")[0] ?? "Student");
+          loadProgress(user.uid).then((p) => setProgress(p));
+        } else {
+          setUserId(null);
+          setDisplayName("Student");
+          setProgress(defaultProgress("guest"));
+        }
+      });
+      return () => unsub();
+    }
+    // Fallback: localStorage session (no Firebase)
     const stored = window.localStorage.getItem("ukmt-user");
     if (stored) {
       try {
         const u = JSON.parse(stored) as { id: string; name: string };
         setUserId(u.id);
         setDisplayName(u.name);
-        // Load progress from server
-        fetch(`/api/progress?userId=${encodeURIComponent(u.id)}`)
-          .then((r) => r.json())
-          .then((data) => {
-            if (data && data.userId) setProgress({ ...defaultProgress(u.id), ...data });
-            else setProgress(loadProgress(u.id));
-          })
-          .catch(() => setProgress(loadProgress(u.id)));
-      } catch {
-        /* ignore */
-      }
+        loadProgress(u.id).then((p) => setProgress(p));
+      } catch { /* ignore */ }
     }
   }, []);
 
@@ -177,25 +190,46 @@ export function SprintApp() {
   /* ───── Auth handlers ───── */
   async function handleLogin() {
     if (!email || !password) { setAuthMessage("Enter both email and password."); return; }
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await res.json();
-    if (!res.ok) { setAuthMessage(data.error ?? "Login failed."); return; }
-    window.localStorage.setItem("ukmt-user", JSON.stringify({ id: data.id, name: data.name }));
-    setUserId(data.id);
-    setDisplayName(data.name);
-    setAuthMessage("");
-    // Load server progress
-    fetch(`/api/progress?userId=${encodeURIComponent(data.id)}`)
-      .then((r) => r.json())
-      .then((p) => { if (p && p.userId) setProgress({ ...defaultProgress(data.id), ...p }); else setProgress(loadProgress(data.id)); })
-      .catch(() => setProgress(loadProgress(data.id)));
+
+    if (isFirebaseConfigured) {
+      try {
+        const user = await signInWithEmail(email, password);
+        setUserId(user.uid);
+        setDisplayName(user.displayName ?? user.email?.split("@")[0] ?? "Student");
+        setAuthMessage("");
+        const p = await loadProgress(user.uid);
+        setProgress(p);
+      } catch (err: unknown) {
+        setAuthMessage(err instanceof Error ? err.message : "Login failed.");
+      }
+    } else {
+      // Local-only mode: use email as ID
+      const id = email.trim().toLowerCase();
+      const name = id.split("@")[0];
+      window.localStorage.setItem("ukmt-user", JSON.stringify({ id, name }));
+      setUserId(id);
+      setDisplayName(name);
+      setAuthMessage("");
+      const p = await loadProgress(id);
+      setProgress(p);
+    }
   }
 
-  function handleSignOut() {
+  async function handleGoogleLogin() {
+    try {
+      const user = await signInWithGoogle();
+      setUserId(user.uid);
+      setDisplayName(user.displayName ?? user.email?.split("@")[0] ?? "Student");
+      setAuthMessage("");
+      const p = await loadProgress(user.uid);
+      setProgress(p);
+    } catch (err: unknown) {
+      setAuthMessage(err instanceof Error ? err.message : "Google sign-in failed.");
+    }
+  }
+
+  async function handleSignOut() {
+    if (isFirebaseConfigured) await signOutUser();
     window.localStorage.removeItem("ukmt-user");
     setUserId(null);
     setDisplayName("Student");
@@ -231,13 +265,7 @@ export function SprintApp() {
     if (!userId) return;
     const next = updateProgressAfterSprint(progress, selectedConcept, computed, activeSet);
     setProgress(next);
-    saveProgress(next);
-    // Persist to server
-    await fetch("/api/progress", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(next),
-    }).catch(() => {/* silent */});
+    await saveProgress(next);
   }, [activeSet, answers, userId, progress, selectedConcept]);
 
   /* ───── Current question shortcut ───── */
@@ -270,8 +298,8 @@ export function SprintApp() {
             <div className="auth-grid">
               <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
               <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-              <button onClick={handleLogin}>Login</button>
-              <Link href="/signup" className="btn-secondary-link">Sign Up</Link>
+              <button onClick={handleLogin}>Login / Sign Up</button>
+              {isFirebaseConfigured && <button className="secondary" onClick={handleGoogleLogin}>Sign in with Google</button>}
             </div>
             {authMessage && <p className="error-msg">{authMessage}</p>}
           </>
