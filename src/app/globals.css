@@ -59,6 +59,15 @@ h1 { font-size: clamp(1.6rem, 5vw, 2.5rem); }
 .auth-grid input { flex: 1; min-width: 160px; }
 .auth-grid button { white-space: nowrap; }
 
+.google-btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .55rem 1rem; border: 1px solid var(--line); border-radius: 8px;
+  background: #fff; color: #3c4043; font-weight: 500; font-size: .9rem;
+  cursor: pointer; transition: background .15s, box-shadow .15s;
+}
+.google-btn:hover { background: #f7f8f8; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.google-btn svg { flex-shrink: 0; }
+
 .btn-secondary-link {
   display: inline-flex; align-items: center; padding: .65rem .85rem;
   border-radius: 10px; background: #e2e8f0; color: var(--ink); text-decoration: none;
