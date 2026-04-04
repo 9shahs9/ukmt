@@ -20,8 +20,12 @@ export default function SignupPage() {
       setMessage("All fields are required.");
       return;
     }
-    if (password.length < 6) {
-      setMessage("Password must be at least 6 characters.");
+    if (password.length < 8) {
+      setMessage("Password must be at least 8 characters.");
+      return;
+    }
+    if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password)) {
+      setMessage("Password must include uppercase, lowercase, and a digit.");
       return;
     }
     if (password !== confirm) {
@@ -37,7 +41,7 @@ export default function SignupPage() {
         await updateProfile(user, { displayName: name });
       }
       setSuccess(true);
-      setMessage(`Account ready for ${email}. You can now go to the home page.`);
+      setMessage("Account created successfully. You can now go to the home page.");
     } catch (err: unknown) {
       setMessage(err instanceof Error ? err.message : "Signup failed.");
     }
@@ -64,15 +68,15 @@ export default function SignupPage() {
             </label>
             <label>
               Email
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" />
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" autoComplete="email" />
             </label>
             <label>
               Password
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Minimum 4 characters" />
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Minimum 8 characters" autoComplete="new-password" />
             </label>
             <label>
               Confirm Password
-              <input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder="Re-enter password" />
+              <input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder="Re-enter password" autoComplete="new-password" />
             </label>
             {message && <p className="error-msg">{message}</p>}
             <button type="submit">Sign Up</button>

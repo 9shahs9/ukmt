@@ -10,6 +10,10 @@ import {
 } from "@/lib/tmua-progress";
 import type { TMUAQuestion, TMUAQuestionBank, TMUAExamMode, TMUAPracticeResult, TMUAProgress } from "@/lib/tmua-types";
 import { MathText } from "@/components/MathText";
+import {
+  isFirebaseConfigured,
+  subscribeToAuth,
+} from "@/lib/firebase";
 import Link from "next/link";
 
 type AppTab = "dashboard" | "learn" | "practice" | "feedback";
@@ -29,14 +33,10 @@ export function TMUAApp() {
   const [tab, setTab] = useState<AppTab>("dashboard");
   const [bank, setBank] = useState<TMUAQuestionBank | null>(null);
   const [progress, setProgress] = useState<TMUAProgress>(defaultTMUAProgress("tmua-guest"));
-  const [userId] = useState(() => {
-    if (typeof window === "undefined") return "tmua-guest";
-    const stored = window.localStorage.getItem("ukmt-user");
-    if (stored) {
-      try { return (JSON.parse(stored) as { id: string }).id; } catch { /* */ }
-    }
-    return "tmua-guest";
-  });
+
+  /* ───── Auth state ───── */
+  const [userId, setUserId] = useState<string | null>(null);
+  const [displayName, setDisplayName] = useState("Student");
 
   /* ───── Learn state ───── */
   const [selectedTopic, setSelectedTopic] = useState<string>(TMUA_TOPICS[0].id);
@@ -64,9 +64,33 @@ export function TMUAApp() {
       .catch(() => setBank(null));
   }, []);
 
+  /* ───── Auth session ───── */
   useEffect(() => {
-    loadTMUAProgress(userId).then((p) => setProgress(p));
-  }, [userId]);
+    if (isFirebaseConfigured) {
+      const unsub = subscribeToAuth((user) => {
+        if (user) {
+          setUserId(user.uid);
+          setDisplayName(user.displayName ?? user.email?.split("@")[0] ?? "Student");
+          loadTMUAProgress(user.uid).then((p) => setProgress(p));
+        } else {
+          setUserId(null);
+          setDisplayName("Student");
+          setProgress(defaultTMUAProgress("tmua-guest"));
+        }
+      });
+      return () => unsub();
+    }
+    // Fallback: localStorage session
+    const stored = window.localStorage.getItem("ukmt-user");
+    if (stored) {
+      try {
+        const u = JSON.parse(stored) as { id: string; name: string };
+        setUserId(u.id);
+        setDisplayName(u.name);
+        loadTMUAProgress(u.id).then((p) => setProgress(p));
+      } catch { /* ignore */ }
+    }
+  }, []);
 
   /* ───── Timer tick ───── */
   useEffect(() => {
@@ -185,6 +209,8 @@ export function TMUAApp() {
   const optionKeys = (q: TMUAQuestion) =>
     Object.entries(q.options).filter(([, v]) => v.trim() !== "").map(([k]) => k);
 
+
+
   /* ════════════════ RENDER ════════════════ */
   return (
     <main className="page-shell">
@@ -202,6 +228,20 @@ export function TMUAApp() {
           <small>{timerRunning ? "Running" : "Stopped"}</small>
         </div>
       </header>
+
+      {/* ─── Auth ─── */}
+      <section className="auth-card">
+        {userId ? (
+          <div className="signed-in">
+            <p>Signed in as <strong>{displayName}</strong></p>
+            <Link href="/" className="btn-secondary-link">Switch track / Sign out</Link>
+          </div>
+        ) : (
+          <p style={{ textAlign: "center" }}>
+            <Link href="/">Sign in on the Hub page</Link> to save your progress.
+          </p>
+        )}
+      </section>
 
       {/* ─── Guided session banner ─── */}
       {guidedMessage && (

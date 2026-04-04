@@ -40,7 +40,7 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 1,
-      "text": "The sum of the two values of x that satisfy the simultaneous equations x-3y1 = 0 and 3x²-7xy = 5 is",
+      "text": "The sum of the two values of x that satisfy the simultaneous equations x-3y+1 =0 and 3x2-7xy=5 is",
       "options": {
         "A": "-8.5",
         "B": "-7.5",
@@ -65,7 +65,7 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 2,
-      "text": "The number of solutions in the interval 0 ൑ߠ൑4ߨ of the equation sin²ߠ3 cos ߠ = 3 is",
+      "text": "The number of solutions in the interval 0 ≤θ≤4π of the equation sin2θ+3 cos θ=3 is",
       "options": {
         "A": "0",
         "B": "1",
@@ -91,11 +91,11 @@
       "questionNumber": 3,
       "text": "The perpendicular bisector of the line segment joining the points (2, -6) and (5, 4) cuts the x‐axis at the point with x‐coordinate",
       "options": {
-        "A": "¹ ²଴",
-        "B": "¹ ଺",
-        "C": "¹ ³",
-        "D": "¹ଽ ହ",
-        "E": "ସ¹ ଺"
+        "A": "1 20",
+        "B": "1 6",
+        "C": "1 3",
+        "D": "19 5",
+        "E": "41 6"
       },
       "correctAnswer": "B",
       "workedSolution": "We find the equation of the perpendicular bisector first, and then find the x-coordinate of this line when y = 0. The midpoint of the line segment joining (2,−6) and (5,4) is (7,−1), and the gradient of this line segment is 4−(−6) = 10. 5−2 3 Therefore the perpendicular bisector passes through (7,−1) and has gradient − 3 . Its equation 2 10 is therefore y−(−1) = − 3 x− 7 . 10 2 Wecouldexpandandsimplifythisequation, butthatisnotnecessaryforourpurposes. Instead, we substitute y = 0 to obtain 1 = − 3 x− 7 10 2 giving x− 7 = −10 2 3 so x = 7 − 10 = 21 − 20 = 1 showing that the correct answer is option B. 2 3 6 6 6",
@@ -111,13 +111,13 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 4,
-      "text": "The complete set of values of x for which (x²-1)(x-2)൐0 is",
+      "text": "The complete set of values of x for which (x2-1)(x-2)>0 is",
       "options": {
-        "A": "x-1, 1 x2",
-        "B": "x-1, x൐2",
-        "C": "-1 x2",
-        "D": "x1, x൐2",
-        "E": "-1 x1, x൐2"
+        "A": "x<-1, 1 <x<2",
+        "B": "x<-1, x>2",
+        "C": "-1 <x<2",
+        "D": "x<1, x>2",
+        "E": "-1 <x<1, x>2"
       },
       "correctAnswer": "E",
       "workedSolution": "We can factorise the given inequality to give (x+1)(x−1)(x−2) > 0. The function f(x) = (x+1)(x−1)(x−2) is zero when x = −1, x = 1 and x = 2. We can now make a table showing the signs of the three factors for different values of x. (This is a useful technique in general.) x < −1 x = −1 −1 < x < 1 x = 1 1 < x < 2 x = 2 x > 2 x+1 − 0 + + + + + x−1 − − − 0 + + + x−2 − − − − − 0 + f(x) − 0 + 0 − 0 + Therefore f(x) is positive when −1 < x < 1 and when x > 2, so the answer is E.",
@@ -133,14 +133,14 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 5,
-      "text": "Given that y = -log¹଴(1 -x) for x1, find x in terms of y.",
+      "text": "Given that y=-log10(1 -x) for x<1, find x in terms of y.",
       "options": {
-        "A": "x = - ¹ ୪୭୥భబ(¹௬)",
-        "B": "x = 1 log¹଴y",
-        "C": "x = 1 -log¹଴y",
-        "D": "x = 1 -10௬",
-        "E": "x = 10௬-1",
-        "F": "x = 10¹௬"
+        "A": "x= - 1 47010(1-y)",
+        "B": "x=1 +log10y",
+        "C": "x=1 -log10y",
+        "D": "x=1 -10-y",
+        "E": "x=10-y-1",
+        "F": "x=101-y"
       },
       "correctAnswer": "D",
       "workedSolution": "y = −log (1−x) ⇐⇒ −y = log (1−x) negate ⇐⇒ 10−y = 1−x exponentiate to base 10 ⇐⇒ x+10−y = 1 add x ⇐⇒ x = 1−10−y subtract 10−y so the answer is D.",
@@ -156,7 +156,7 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 6,
-      "text": "It is given that x2 is a factor of x³4x²x(1)²-6. The sum of the possible values of is",
+      "text": "It is given that x+2 is a factor of x3+4cx2+x(c+1)2-6. The sum of the possible values of c is",
       "options": {
         "A": "-10",
         "B": "-6",
@@ -179,14 +179,14 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 7,
-      "text": "A bag contains red balls, yellow balls, and blue balls. One ball is selected at random and not replaced. A second ball is then selected at random and not replaced. Each ball is equally likely to be chosen. The probability that the two balls are not the same colour is",
+      "text": "A bag contains n red balls, n yellow balls, and n blue balls. One ball is selected at random and not replaced. A second ball is then selected at random and not replaced. Each ball is equally likely to be chosen. The probability that the two balls are not the same colour is",
       "options": {
-        "A": "௡¹ ³௡¹",
-        "B": "²௡² ³௡¹",
-        "C": "²௡ ³௡¹",
-        "D": "(௡¹)య ²଻(³௡¹)య",
-        "E": "³(௡¹) ³௡¹",
-        "F": "௡య ²଻(³௡¹)య"
+        "A": "n-1 3n-1",
+        "B": "2n-2 3n-1",
+        "C": "2n 3n-1",
+        "D": "(n-1)3 27(3n-1)3",
+        "E": "3(n-1) 3n-1",
+        "F": "n3 27(3n-1)3"
       },
       "correctAnswer": "C",
       "workedSolution": "We could do this using a tree diagram, but it would have 3×3 branches, which is somewhat unwieldly in a short test. Here are two alternative approaches. Approach 1: use symmetry The first ball can be anything; it does not matter what. We are left with n−1 balls of the same colour and 2n balls of different colours; there are 3n − 1 balls left in total. (This is because there are equal numbers of each colour to begin with. Were there different numbers of different colours, we would have to treat each colour separately.) 2n So the probability that the two balls are not the same colour is , which is option C. 3n−1 Approach 2: use negation The probability that the two balls not the same colour is 1 minus the probability that they are the same colour. This gives n n−1 n n−1 n n−1 1− × + × + × 3n 3n−1 3n 3n−1 3n 3n−1 where we have added the three colours separately. This simplifies to n−1 2n 1− = . 3n−1 3n−1 We could have simplified the calculation in the same way as in approach 1: the probability that n−1 the second ball is the same colour as the first is , so the probability that they are different 3n−1 colours is 1 minus this.",
@@ -202,16 +202,16 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 8,
-      "text": "Given that 5²5³5 = 2, where , , and are positive real numbers, then x =",
+      "text": "Given that axb2xc3x=2, where a, b, and c are positive real numbers, then x=",
       "options": {
-        "A": "log¹଴ቀ ² ௔ା²௕ା³௖ቁ",
-        "B": "୪୭୥భబ² ୪୭୥భబ(௔ା²௕ା³௖)",
-        "C": "² ୪୭୥భబ(௔ା²௕ା³௖)",
-        "D": "² ௔ା²௕ା³௖",
-        "E": "log¹଴ቀ ² ௔௕మ௖యቁ",
-        "F": "୪୭୥భబ² ୪୭୥భబ(௔௕మ௖య)",
-        "G": "² ୪୭୥భబ(௔௕మ௖య)",
-        "H": "² ௔௕మ௖య"
+        "A": "log10( 2 a+2b+3c)",
+        "B": "470102 47010(a+2b+3c)",
+        "C": "2 47010(a+2b+3c)",
+        "D": "2 a+2b+3c",
+        "E": "log10( 2 ab2c3)",
+        "F": "470102 47010(ab2c3)",
+        "G": "2 47010(ab2c3)",
+        "H": "2 ab2c3"
       },
       "correctAnswer": "F",
       "workedSolution": "The options all involve logarithm to base 10, so we start by taking logarithms of the given equation. This gives log (axb2xc3x = log 2 10 10 so log (ax)+log (b2x)+log (c3x) = log 2. 10 10 10 10 We now use the index rule for logarithms to give xlog a+2xlog b+3xlog c = log 2 10 10 10 10 which factorises to x(log a+2log b+3log c) = log 2 10 10 10 10 and hence log 2 x = 10 . log a+2log b+3log c 10 10 10 This, though, is not one of the offered options; we now have to apply the logarithm rules in reverse to give log 2 x = 10 log a+log (b2)+log (c3) 10 10 10 which simplifies further to log 2 x = 10 log (ab2c3) and so the answer is F.",
@@ -227,12 +227,12 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 9,
-      "text": "The roots of the equation 2x²-11x = 0 differ by 2. The value of is",
+      "text": "The roots of the equation 2x2-11x+c=0 differ by 2. The value of c is",
       "options": {
-        "A": "¹଴ହ ଼",
-        "B": "¹¹³ ଼",
-        "C": "¹¹଻ ଼",
-        "D": "¹¹ଽ ଼"
+        "A": "105 8",
+        "B": "113 8",
+        "C": "117 8",
+        "D": "119 8"
       },
       "correctAnswer": "A",
       "workedSolution": "The roots of the equation, using the quadratic formula, are √ 11± 112−8c x = and these differ by √ 2 112−8c x = = 2 √ so we require 112−8c = 4, or 121−8c = 16. Thus 8c = 105, so c = 105 and the answer is A.",
@@ -248,12 +248,12 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 10,
-      "text": "The curve y = cos x is reflected in the line y = 1 and the resulting curve is then translated by గ ସ units in the positive x‐direction. The equation of this new curve is",
+      "text": "The curve y=cos x is reflected in the line y=1 and the resulting curve is then translated by 4 units in the positive x‐direction. The equation of this new curve is",
       "options": {
-        "A": "y = 2 cos ቀx గ ସቁ",
-        "B": "y = 2 cos ቀx- గ ସቁ",
-        "C": "y = 2 -cos ቀx గ ସቁ",
-        "D": "y = 2 -cos ቀx- గ ସቁ ."
+        "A": "y=2 +cos (x+ 4)",
+        "B": "y=2 +cos (x- 4)",
+        "C": "y=2 -cos (x+ 4)",
+        "D": "y=2 -cos (x- 4) ."
       },
       "correctAnswer": "D",
       "workedSolution": "When the graph is reflected in the line y = 1, we obtain the following: y x −2π −π 0 π 2π We can find the equation of the reflected curve in a variety of ways. One is to observe that the reflection is centred about y = 2, as the values go from y = 1 to y = 3. The cosine curve is ‘upside-down’, so the equation must be y = −(cosx)+2 = 2−cosx. Another way to see this is as follows. The refletion of y = f(x) in the x-axis (y = 0) is y = −f(x). When the line of reflection is translated, the whole reflection is translated. Since y = 0 is transformed to y = 2, the reflection of the function must be translated to give y = 2−f(x). The result is then translated by π in the positive x-direction, so that x is replaced by x− π. 4 4 (We can see this because the new x = π corresponds to the old x = 0.) Therefore, the equation of the resulting graph is π y = 2−cos x− . Thus the correct answer is option D.",
@@ -269,13 +269,13 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 11,
-      "text": "The sum of the roots of the equation 2²5-8 ൈ2515 = 0 is",
+      "text": "The sum of the roots of the equation 22x-8 ×2x+15 =0 is",
       "options": {
         "A": "",
         "B": "",
-        "C": "2 log¹଴2",
-        "D": "log¹଴ቀ ¹ହ ସቁ",
-        "E": "୪୭୥భబ¹ହ ୪୭୥భబ²"
+        "C": "2 log102",
+        "D": "log10( 15 4)",
+        "E": "4701015 470102"
       },
       "correctAnswer": "E",
       "workedSolution": "Writingy = 2x,theequationbecomesy2−8y+15 = 0,whichfactorisestogive(y−3)(y−5) = 0. Thus y = 3 or y = 5, so 2x = 3 or 2x = 5. Thegivenoptionsalluselogarithmstobase10, sowewilltakelogarithmsofthesetwoequations log 3 to base 10. The first gives xlog 2 = log 3, so x = 10 . Likewise, the second equation 10 10 log 2 log 5 gives x = 10 . Finally, we can add these to obtain log 2 log 3 log 15 log (3×5 log 15 10 + 10 = 10 = 10 log 2 log 2 log 2 log 2 10 10 10 10 and the answer is option E. An alternative is to take logarithms to base 2, giving the roots as log 3 and log 5. These sum 2 2 to log 15. Unfortunately, this is not one of the options offered, as they are all given using logarithms to base 10. If you know the change of base rule for logarithms, though, which states log b that log b = c , you can put c = 10 to obtain the correct option. a log a c",
@@ -291,13 +291,13 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 12,
-      "text": "The cross‐section of a triangular prism is an equilateral triangle with side 2x cm. The length of the prism is cm. Let the total surface area of the prism be ܶ cm2. Given that the volume of the prism is ܶ cm3, which one of the following is an expression for in terms of x?",
+      "text": "The cross‐section of a triangular prism is an equilateral triangle with side 2x cm. The length of the prism is d cm. Let the total surface area of the prism be T cm2. Given that the volume of the prism is T cm3, which one of the following is an expression for d in terms of x?",
       "options": {
-        "A": "5 ²5³",
-        "B": "³5 ³5²√³",
-        "C": "²5 5ସ√³",
-        "D": "²5 5²√³",
-        "E": "²5 5√³"
+        "A": "x 2x-3",
+        "B": "3x 3x-2√3",
+        "C": "2x x-4√3",
+        "D": "2x x-2√3",
+        "E": "2x x-√3"
       },
       "correctAnswer": "D",
       "workedSolution": "The volume of the prism is the length times the cross-sectional area, so we need to work out the area of the equilateral triangle: C 2x 2x A B x M We could use trigonometry and the formula for the area of a triangle, area = 1absinC; this √ 2 gives the area as 1(2x)(2x)sin60° = x2 3. Alternatively, we could find the length CM using Pythagoras’s theorem, giving CM2 = (2x)2− √ √ x2 = 3x2, so CM = x 3. Thus the area of the triangle is 1AB×CM = x2 3. √ Thus the volume of the prism is T = x2d 3. The total surface area of the prism is twice the area of the triangle, plus the area of the three rectangular faces, so √ √ T = 2x2 3+3(2xd) = 2x2 3+6xd. These expressions for T are equal, so √ √ x2d 3 = 2x2 3+6xd. Collecting the d terms to the left hand side gives √ √ x2d 3−6xd = 2x2 3 so √ √ d(x2 3−6x) = 2x2 3 hence √ √ 2x2 3 2x 3 d = √ = √ . x2 3−6x x 3−6 √ If we now divide the numerator and denominator by 3, we obtain 2x d = √ , x−2 3 which is option D.",
@@ -314,7 +314,7 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 13,
-      "text": "How many real roots does the equation xସ-4x³4x²-10 = 0 have?",
+      "text": "How many real roots does the equation x4-4x3+4x2-10 =0 have?",
       "options": {
         "A": "0",
         "B": "1",
@@ -336,13 +336,13 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 14,
-      "text": ", , x, and y are real and positive. and are constants. x and y are related. A graph of log y against log x is drawn. For which one of the following relationships will this graph be a straight line?",
+      "text": "a, b, x, and y are real and positive. a and b are constants. x and y are related. A graph of log y against log x is drawn. For which one of the following relationships will this graph be a straight line?",
       "options": {
-        "A": "y௕ = 5",
-        "B": "y = 5",
-        "C": "y² = x௕",
-        "D": "y = x௕",
-        "E": "y5 = ௕"
+        "A": "yb=ax",
+        "B": "y=abx",
+        "C": "y2=a+xb",
+        "D": "y=axb",
+        "E": "yx=ab"
       },
       "correctAnswer": "D",
       "workedSolution": "If the graph is a straight line, then we must have (logy) = m(logx)+c for some m and c; this is just the usual straight-line equation with x and y replaced by logx and logy. This can be written as logy = log(xm)+c. If we now write c = logC for some C, then this becomes logy = logxm+logC = log(Cxm). Exponentiating both sides gives y = Cxm which is in the form of option D. An alternative to writing c = logC is just to exponentiate the equation logy = log(xm)+c. If we suppose that the base of the logarithms is k, then this gives y = xmkc (using ku+v = kukv and klogu = u for any u and v). Since kc is a constant, this equation can be rewritten as y = axm where a = kc, and we again obtain option D.",
@@ -359,12 +359,12 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 15,
-      "text": "The smallest possible value of ׬ (x-)² x ¹ ଴ as varies is",
+      "text": "The smallest possible value of ׬ (x-a)2 dx 1 0 as a varies is",
       "options": {
-        "A": "¹ ¹²",
-        "B": "¹ ³",
-        "C": "¹ ²",
-        "D": "଻ ¹²",
+        "A": "1 12",
+        "B": "1 3",
+        "C": "1 2",
+        "D": "7 12",
         "E": "2"
       },
       "correctAnswer": "A",
@@ -381,16 +381,16 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 16,
-      "text": "Given that and are non‐zero integers, the expression ¹଴೎షమ೏ ൈ ²଴మ೎శ೏ ଼೎ ൈ ¹²ହ೎శ೏ is an integer if",
+      "text": "Given that c and d are non‐zero integers, the expression 10೎-2೏ × 202೎+೏ 8೎ × 125೎+೏ is an integer if",
       "options": {
-        "A": "0",
-        "B": "0",
-        "C": "0 and 0",
-        "D": "0 and ൐0",
-        "E": "൐0 and 0",
-        "F": "൐0 and ൐0",
-        "G": "൐0",
-        "H": "൐0"
+        "A": "c<0",
+        "B": "d<0",
+        "C": "c<0 and d<0",
+        "D": "c<0 and d>0",
+        "E": "c>0 and d<0",
+        "F": "c>0 and d>0",
+        "G": "d>0",
+        "H": "c>0"
       },
       "correctAnswer": "E",
       "workedSolution": "We begin by simplifying this expression; we write each term as a product of prime powers to obtain: 10c−2d×202c+d (2×5)c−2d×(22×5)2c+d = 8c×125c+d (23)c×(53)c+d 2c−2d+2(2c+d)×5c−2d+(2c+d) = 23c×53(c+d) 25c)×53c−d = 23c×53c+3d = 22c×5−4d For this to be an integer, we require 2c and −4d to be non-negative integers. Since c and d are non-zero integers, we need c > 0 and d < 0, which is option E. (In fact, this is an “if and only if” condition; options C, D and F would make the expression non-integer, as would A and G; while conditions B and H are necessary, they are not sufficient: if d < 0, it is still possible that c < 0, so it is not true that the given expression is (necessarily) an integer if d < 0.)",
@@ -407,13 +407,13 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 17,
-      "text": "For what values of the non‐zero real number does the quadratic equation x²(-2)x = 2 have real distinct roots?",
+      "text": "For what values of the non‐zero real number a does the quadratic equation ax2+(a-2)x=2 have real distinct roots?",
       "options": {
-        "A": "All values of",
-        "B": "= -2",
-        "C": "൐-2",
-        "D": "്-2",
-        "E": "No values of"
+        "A": "All values of a",
+        "B": "a=-2",
+        "C": "a>-2",
+        "D": "a-2",
+        "E": "No values of a"
       },
       "correctAnswer": "D",
       "workedSolution": "The quadratic equation can be written as ax2+(a−2)x−2 = 0, which has discriminant (a−2)2−4a(−2) = a2−4a+4+8a = a2+4a+4 = (a+2)2. The quadratic has real distinct roots when the disciminant is positive, so when (a+2)2 > 0. Now (a+2)2 = 0 when a = −2, and (a+2)2 0 for all values of a, so (a+2)2 > 0 when a = −2, which is option D.",
@@ -429,15 +429,15 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 18,
-      "text": "The angle x is measured in radians and is such that 0 ൑x൑ߨ. The total length of any intervals for which -1 ൑tan x൑1 and sin 2x൒0.5 is",
+      "text": "The angle x is measured in radians and is such that 0 ≤x≤π. The total length of any intervals for which -1 ≤tan x≤1 and sin 2x≥0.5 is",
       "options": {
-        "A": "గ ¹²",
-        "B": "గ ଺",
-        "C": "గ ସ",
-        "D": "గ ³",
-        "E": "ହగ ¹²",
-        "F": "గ ²",
-        "G": "ହగ ଺"
+        "A": "12",
+        "B": "6",
+        "C": "4",
+        "D": "3",
+        "E": "5 12",
+        "F": "2",
+        "G": "5 6"
       },
       "correctAnswer": "B",
       "workedSolution": "We first consider each of the inequalities separately. A sketch of the graph of y = tanx for 0 x π is as follows: y x 0 π π Noting that tan pi = 1 and tan 3π = −1, we see from the sketch that −1 tanx 1 when 4 4 0 x π and when 3π x π. 4 4 Next, we sketch the graph of y = sin2x over the same interval: y x 0 π π Noting that sin π = sin 5π = 0.5, we see from the sketch that sin2x 0.5 when π 2x 5π, 6 6 6 6 that is, when π x 5π. 12 12 Now comparing the intervals for the tangent and sine inequalities, we note that they are both satisfied when π x π, and the length of this interval is π − π = π, so the answer is B. 12 4 4 12 6",
@@ -454,12 +454,12 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 19,
-      "text": "A geometric series has first term 4 and common ratio ݎ, where 0 ݎ1. The first, second, and fourth terms of this geometric series form three successive terms of an arithmetic series. The sum to infinity of the geometric series is",
+      "text": "A geometric series has first term 4 and common ratio r, where 0 <r<1. The first, second, and fourth terms of this geometric series form three successive terms of an arithmetic series. The sum to infinity of the geometric series is",
       "options": {
-        "A": "¹ ²൫√5 -1൯",
-        "B": "2൫3 -√5൯",
-        "C": "2൫1 √5൯",
-        "D": "2൫3 √5൯"
+        "A": "1 2(√5 -1)",
+        "B": "2(3 -√5)",
+        "C": "2(1 +√5)",
+        "D": "2(3 +√5)"
       },
       "correctAnswer": "D",
       "workedSolution": "The first four terms are 4, 4r, 4r2 and 4r3. We are also given that 4, 4r and 4r3 are three successive terms of an arithmetic series. We thus have 4r = 4+d 4r3 = 4+2d where d is the common difference of this arithmetic series. Therefore d = 4(r − 1) from the first equation, and d = 4r(r2 − 1) on subtracting the two equations. Equating these expressions for d gives 4(r−1) = 4r(r2−1) so r−1 = r(r−1)(r+1) on factorising and dividing by 4. Since 0 < r < 1, we can divide by r−1 to obtain 1 = r(r+1), so r2+r−1 = 0. The solutions to this quadratic are √ √ −1± 12+4 −1± 5 r = = . 2 2 √ Since r > 0, we have r = −1+ 5, and so the sum to infinity (given by the standard formula S = a ) is ∞ 1−r 4 8 √ = √ 1− −1+ 5 2−(−1+ 5) = √ 3− 5 √ 8(3+ 5) = 9−5 √ = 2(3+ 5) and the answer is D.",
@@ -475,7 +475,7 @@
       "year": "Specimen",
       "paper": 1,
       "questionNumber": 20,
-      "text": "The coefficient of x² in the expansion of (4 -x²)ሾ(1 2x3x²)଺-(1 4x³)ହሿ is",
+      "text": "The coefficient of x2 in the expansion of (4 -x2)[(1 +2x+3x2)6-(1 +4x3)5] is",
       "options": {
         "A": "28",
         "B": "72",
@@ -499,11 +499,11 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 1,
-      "text": "The radius of the circle 2x²+ 2y²−8x+ 12y+ 15 = 0 is",
+      "text": "The radius of the circle 2x2+ 2y2−8x+ 12y+ 15 = 0 is",
       "options": {
-        "A": "ටହ ²",
-        "B": "ට ¹¹ ²",
-        "C": "ට ସ¹ ²",
+        "A": "ට5 2",
+        "B": "ට 11 2",
+        "C": "ට 41 2",
         "D": "√37",
         "E": "√67"
       },
@@ -521,12 +521,12 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 2,
-      "text": "The gradient of the curve y= (³5²)మ 5√5 at the point where x= 2 is",
+      "text": "The gradient of the curve y= (3x-2)2 x√x at the point where x= 2 is",
       "options": {
-        "A": "³ ²√2",
+        "A": "3 2√2",
         "B": "3√2",
         "C": "4√2",
-        "D": "ଽ ²√2",
+        "D": "9 2√2",
         "E": "6√2"
       },
       "correctAnswer": "B",
@@ -588,13 +588,13 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 5,
-      "text": "Using the observation that 2ହൎ3³, it is possible to deduce that log³2 is approximately",
+      "text": "Using the observation that 25ൎ33, it is possible to deduce that log32 is approximately",
       "options": {
-        "A": "³ ହ",
-        "B": "² ³",
-        "C": "³ ²",
-        "D": "ହ ³",
-        "E": "¹ ²",
+        "A": "3 5",
+        "B": "2 3",
+        "C": "3 2",
+        "D": "5 3",
+        "E": "1 2",
         "F": "2"
       },
       "correctAnswer": "A",
@@ -611,14 +611,14 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 6,
-      "text": "The area of a rectangle is measured to be 5600 cm² correct to 2 significant figures. The width of the rectangle is measured to be 80 cm correct to the nearest centimetre. Which one of the following expressions gives the greatest possible height of the rectangle?",
+      "text": "The area of a rectangle is measured to be 5600 cm2 correct to 2 significant figures. The width of the rectangle is measured to be 80 cm correct to the nearest centimetre. Which one of the following expressions gives the greatest possible height of the rectangle?",
       "options": {
         "A": "70.5 cm",
         "B": "75 cm",
-        "C": "ହ଺ହ଴ ଼ହ cm",
-        "D": "ହ଺ହ଴ ଼଴.ହ cm",
-        "E": "ହ଺ହ଴ ଻ହ cm",
-        "F": "ହ଺ହ଴ ଻ଽ.ହ cm"
+        "C": "5650 85 cm",
+        "D": "5650 80.5 cm",
+        "E": "5650 75 cm",
+        "F": "5650 79.5 cm"
       },
       "correctAnswer": "F",
       "workedSolution": "The area of the rectangle is height times width, so area height = . width Toobtainthegreatestpossibleheight,werequirethegreatestpossibleareaandtheleastpossible width. The upper bound for the area is 5650cm, and the lower bound for the height is 79.5cm, so the greatest possible height is 5650 cm, which is option F. 79.5",
@@ -636,7 +636,7 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 7,
-      "text": "Which one of the following is a sketch of the graph (x+ y)(x²−xy+ y²) = 1 ?",
+      "text": "Which one of the following is a sketch of the graph (x+ y)(x2−xy+ y2) = 1 ?",
       "options": {
         "A": "",
         "B": "",
@@ -657,13 +657,13 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 8,
-      "text": "Consider the following statement about the positive integer : Statement (*): The sum of the four consecutive integers, the smallest of which is , is a multiple of 6. Which one of the following is true?",
+      "text": "Consider the following statement about the positive integer n: Statement (*): The sum of the four consecutive integers, the smallest of which is n, is a multiple of 6. Which one of the following is true?",
       "options": {
-        "A": "Statement (*) is true for all values of .",
-        "B": "Statement (*) is true for all values of which are odd, but not for any other values of .",
-        "C": "Statement (*) is true for all values of which are multiples of 3, but not for any other values of .",
-        "D": "Statement (*) is true for all values of which are multiples of 6, but not for any other values of .",
-        "E": "Statement (*) is not true for any value of ."
+        "A": "Statement (*) is true for all values of n.",
+        "B": "Statement (*) is true for all values of n which are odd, but not for any other values of n.",
+        "C": "Statement (*) is true for all values of n which are multiples of 3, but not for any other values of n.",
+        "D": "Statement (*) is true for all values of n which are multiples of 6, but not for any other values of n.",
+        "E": "Statement (*) is not true for any value of n."
       },
       "correctAnswer": "C",
       "workedSolution": "We could start by trying a few examples to get a feeling for the statement. • n = 0 gives 0+1+2+3 = 6, so (*) is true in this case. • n = 1 gives 1+2+3+4 = 10, so (*) is false in this case. • n = 2 gives 2+3+4+5 = 14, so (*) is false in this case. • n = 3 gives 3+4+5+6 = 18, so (*) is true in this case. Of the given options, this exploration shows: A is false; B is false (as (*) is false for n = 1); C may be true; D is false (as (*) is true for n = 3), and E is false. So by elimination, the correct answer must be C. We can also prove this. The sum of the four consecutive integers is n+(n+1)+(n+2)+(n+3) = 4n+6. This is a multiple of 6 whenever 4n is a multiple of 6. An integer is a multiple of 6 if and only if it is a multiple of both 2 and 3. 4n is always a multiple of 2, and is a multiple of 3 when n is a multiple of 3 and for no other value of n. Hence option C is correct.",
@@ -702,7 +702,7 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 10,
-      "text": "Which one of the following is a sketch of the graph of y= log52 for x> 1?",
+      "text": "Which one of the following is a sketch of the graph of y= logx2 for x> 1?",
       "options": {
         "A": "",
         "B": "",
@@ -727,11 +727,11 @@
       "questionNumber": 11,
       "text": "Which one of the following numbers is largest in value? (All angles are given in radians.)",
       "options": {
-        "A": "tan ቀ ³గ ସቁ",
-        "B": "log¹଴100",
-        "C": "sin¹଴ቀ గ ²ቁ",
-        "D": "log²10",
-        "E": "൫√2 −1൯ ¹଴"
+        "A": "tan ( 3 4)",
+        "B": "log10100",
+        "C": "sin10( 2)",
+        "D": "log210",
+        "E": "(√2 −1) 10"
       },
       "correctAnswer": "D",
       "workedSolution": "We work out or approximate all five numbers. A tan 3π = −1 B log 100 = 2 C sin10π = 110 = 1 D log 10 = 3.···, or more formally, 3 < log 10 < 4, as 23 = 8 and 24 = 16 2 2 √ √ E 0 < 2−1 < 1, so 0 < ( 2−1)10 < 1 Only one of these numbers is greater than 3, so the answer is D.",
@@ -748,16 +748,16 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 12,
-      "text": "A polynomial (x) has the property that (1) = 2. Which one of the following can be deduced from this?",
+      "text": "A polynomial p(x) has the property that p(1) = 2. Which one of the following can be deduced from this?",
       "options": {
-        "A": "(x) = (x−1)r(x) + 2 for some polynomial r(x).",
-        "B": "(x) = (x+ 1)r(x) + 2 for some polynomial r(x).",
-        "C": "(x) = (x−1)r(x) −2 for some polynomial r(x).",
-        "D": "(x) = (x+ 1)r(x) −2 for some polynomial r(x).",
-        "E": "(x) = (x−2)r(x) + 1 for some polynomial r(x).",
-        "F": "(x) = (x+ 2)r(x) + 1 for some polynomial r(x).",
-        "G": "(x) = (x−2)r(x) −1 for some polynomial r(x).",
-        "H": "(x) = (x+ 2)r(x) −1 for some polynomial r(x)."
+        "A": "p(x) = (x−1)q(x) + 2 for some polynomial q(x).",
+        "B": "p(x) = (x+ 1)q(x) + 2 for some polynomial q(x).",
+        "C": "p(x) = (x−1)q(x) −2 for some polynomial q(x).",
+        "D": "p(x) = (x+ 1)q(x) −2 for some polynomial q(x).",
+        "E": "p(x) = (x−2)q(x) + 1 for some polynomial q(x).",
+        "F": "p(x) = (x+ 2)q(x) + 1 for some polynomial q(x).",
+        "G": "p(x) = (x−2)q(x) −1 for some polynomial q(x).",
+        "H": "p(x) = (x+ 2)q(x) −1 for some polynomial q(x)."
       },
       "correctAnswer": "A",
       "workedSolution": "This is an application of the remainder theorem. If we divide p(x) by (x−1), we get a quotient q(x) and a remainder r. We can write this as p(x) = (x−1)q(x)+r. If we now substitute x = 1 into this identity, we obtain p(1) = r, so we must have r = 2 (since we are told p(1) = 2). Therefore p(x) = (x−1)q(x)+2 for some polynomial q(x), which is option A. It may be the case that some or all of B, D, E, F, G and H are also true, but we cannot deduce this from the given information. C must be false, as if we substitute x = 1, we obtain 2 = −2.",
@@ -796,7 +796,7 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 14,
-      "text": "The graph of the polynomial function y= xହ+ xସ+ x³+ x²+ ݁x+ , is sketched, where , , , , ݁, and are real constants with ≠0. Which one of the following is not possible?",
+      "text": "The graph of the polynomial function y= ax5+ bx4+ cx3+ dx2+ ex+ f, is sketched, where a, b, c, d, e, and f are real constants with a≠0. Which one of the following is not possible?",
       "options": {
         "A": "The graph has two local minima and two local maxima.",
         "B": "The graph has one local minimum and two local maxima.",
@@ -818,7 +818,7 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 15,
-      "text": "For any real numbers , , and where ≥, consider these three statements: 1 −≥− 2 ²+ ²≥2 ≥ Which of the statements 1, 2, and 3 must be true?",
+      "text": "For any real numbers a, b, and c where a≥b, consider these three statements: 1 −b≥−a 2 a2+ b2≥2ab ac≥bc Which of the statements 1, 2, and 3 must be true?",
       "options": {
         "A": "none",
         "B": "1 only",
@@ -843,14 +843,14 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 16,
-      "text": "The sequence ௡ is given by the rule: ¹= 2 ௡ା¹= ௡+ (−1)௡ for ≥1 What is ෍௡ ¹଴଴ ௡ୀ¹",
+      "text": "The sequence an is given by the rule: a1= 2 an+1= an+ (−1)n for n≥1 What is ෍an 100 n1",
       "options": {
         "A": "150",
         "B": "250",
         "C": "−4750",
         "D": "5150",
-        "E": "4 ൬1 −ቀ ¹ ²ቁ ¹଴଴ ൰",
-        "F": "4 ൬ቀ ³ ²ቁ ¹଴଴ −1൰"
+        "E": "4 ൬1 −( 1 2) 100 ൰",
+        "F": "4 ൬( 3 2) 100 −1൰"
       },
       "correctAnswer": "A",
       "workedSolution": "We start by calculating the first few terms of the sequence: a = 2 a = 2+(−1)1 = 1 a = 1+(−1)2 = 2 a = 2+(−1)3 = 1 a = 1+(−1)4 = 2 The pattern is now clear: every pair of terms is 2, 1 and sums to 3. So 1 n 0 = 0 1 a n is the sum of 50 pairs of terms, each of which sums to 3. Hence a = 50×3 = 150 n n=1 and the answer is A. Commentary: Note that this is not an arithmetic series, as there is not a common dif- ference (that is, equal difference) between consecutive terms, and neither is it a geometric series. So we cannot use the formulae for the sum of an arithmetic or geometric series.",
@@ -867,14 +867,14 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 17,
-      "text": "Let ܵ be a set of positive integers, for example ܵ could consist of 3, 4, and 8. A positive integer is called an ܵ-number if and only if for every factor ݉ of with ݉> 1, the number ݉ is a multiple of some number in ܵ. So in the above example, 9 is an ܵ-number; this is because the factors of 9 greater than 1 are 3 and 9, and each of these is a multiple of 3. Positive integer is therefore not an ܵ-number if and only if",
+      "text": "Let S be a set of positive integers, for example S could consist of 3, 4, and 8. A positive integer n is called an S-number if and only if for every factor m of n with m> 1, the number m is a multiple of some number in S. So in the above example, 9 is an S-number; this is because the factors of 9 greater than 1 are 3 and 9, and each of these is a multiple of 3. Positive integer n is therefore not an S-number if and only if",
       "options": {
-        "A": "for every (positive) factor ݉ of with ݉> 1, there is a number in ܵ which is not a factor of ݉.",
-        "B": "for every (positive) factor ݉ of with ݉> 1, there is no number in ܵ which is a factor of ݉.",
-        "C": "for every (positive) factor ݉ of with ݉> 1, every number in ܵ is a factor of ݉.",
-        "D": "for some (positive) factor ݉ of with ݉> 1, there is a number in ܵ which is not a factor of ݉.",
-        "E": "for some (positive) factor ݉ of with ݉> 1, there is no number in ܵ which is a factor of ݉.",
-        "F": "for some (positive) factor ݉ of with ݉> 1, every number in ܵ is a factor of ݉."
+        "A": "for every (positive) factor m of n with m> 1, there is a number in S which is not a factor of m.",
+        "B": "for every (positive) factor m of n with m> 1, there is no number in S which is a factor of m.",
+        "C": "for every (positive) factor m of n with m> 1, every number in S is a factor of m.",
+        "D": "for some (positive) factor m of n with m> 1, there is a number in S which is not a factor of m.",
+        "E": "for some (positive) factor m of n with m> 1, there is no number in S which is a factor of m.",
+        "F": "for some (positive) factor m of n with m> 1, every number in S is a factor of m."
       },
       "correctAnswer": "E",
       "workedSolution": "We are being asked to negate the statement ‘n is an S-number’, that is, to negate the statement for every factor m of n with m > 1, the number m is a multiple of some number in S. The negation of ‘for every m, P’ is ‘there exists m such that not P’, a negation is there exists a factor m of n with m > 1 such that it is not the case that the number m is a multiple of some number in S. (Note that ‘a factor m of n with m > 1’ is the condition on the numbers m which are being considered by the ‘for every’, so it is not changed by the negation.) ‘There exists’ is the same as ‘for some’, so the correct answer is either D, E or F. We next need to simplify the second half of our new statement, namely ‘it is not the case that the number m is a multiple of some number in S’. If it is not the case that ‘the number m is a multiple of some number in S’, then it must be that m is not a multiple of any number in S, or equivalently, that no number in S is a factor of m. Therefore a full negation is for some factor m of n with m > 1, there is no number in S which is a factor of m, so the correct answer is E.",
@@ -896,8 +896,8 @@
       "options": {
         "A": "0",
         "B": "",
-        "C": "¹ ²",
-        "D": "¹ ²",
+        "C": "1 2",
+        "D": "1 2",
         "E": "",
         "F": "20"
       },
@@ -916,15 +916,15 @@
       "year": "Specimen",
       "paper": 2,
       "questionNumber": 19,
-      "text": "The positive real numbers , , and are such that the equation x³+ x²= x+ has three real roots, one positive and two negative. Which one of the following correctly describes the real roots of the equation x³+ = x²+ x ?",
+      "text": "The positive real numbers a, b, and c are such that the equation x3+ ax2= bx+ c has three real roots, one positive and two negative. Which one of the following correctly describes the real roots of the equation x3+ c= ax2+ bx ?",
       "options": {
         "A": "It has three real roots, one positive and two negative.",
         "B": "It has three real roots, two positive and one negative.",
-        "C": "It has three real roots, but their signs differ depending on , , and .",
+        "C": "It has three real roots, but their signs differ depending on a, b, and c.",
         "D": "It has exactly one real root, which is positive.",
         "E": "It has exactly one real root, which is negative.",
-        "F": "It has exactly one real root, whose sign differs depending on , , and .",
-        "G": "The number of real roots can be one or three, but the number of roots differs depending on , , and ."
+        "F": "It has exactly one real root, whose sign differs depending on a, b, and c.",
+        "G": "The number of real roots can be one or three, but the number of roots differs depending on a, b, and c."
       },
       "correctAnswer": "B",
       "workedSolution": "The first equation can be rewritten as f(x) = x3+ax2−bx−c = 0 (1) and the second equation as g(x) = x3−ax2−bx+c = 0. (2) Comparing these two equations, we see that the coefficient of x2 and the constant term have been negated. We can also negate equation (2) to give −g(x) = −x3+ax2+bx−c = 0. (3) This is similar to equation (1), but now the coefficients of x3 and x have been negated. This indicates that we can relate this to equation (1) by substituting in −x. We find that f(−x) = (−x)3+a(−x)2−b(−x)−c = −x3+ax2+bx−c = −g(x) and so equation (3) becomes f(−x) = 0. Sincewearetoldthatf(x) = 0hasthreerealroots,onepositiveandtwonegative,andf(−x) = 0 must have three real roots, one negative and two positive. (It might be helpful to note here that y = f(−x) is the reflection of y = f(x) in the y-axis.) Hence the answer is B.",
@@ -968,7 +968,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 1,
-      "text": "is given that the expansion of (x)³ is 8x³-x²18x-3ξ3ǡ where ǡ and are real constantsǤ hat is the value of ǫ",
+      "text": "is given that the expansion of (ax+b)3 is 8x3-px2+18x-3ξ3, where a, b and p are real constants. hat is the value of p?",
       "options": {
         "A": "-12ξ3"
       },
@@ -986,9 +986,9 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 2,
-      "text": "he expression 3x³13x²8xǡ where is a constantǡ has (x2) as a factorǤ hich one of the following is a complete factorisation of the expressionǫ",
+      "text": "he expression 3x3+13x2+8x+a, where a is a constant, has (x+2) as a factor. hich one of the following is a complete factorisation of the expression?",
       "options": {
-        "A": "(x2)(x-1)(3x-2)"
+        "A": "(x+2)(x-1)(3x-2)"
       },
       "correctAnswer": "E",
       "workedSolution": "We can use the factor theorem to find the value of a; alternatively we can just divide by (x+2) anddeduceathatway, aswewillneedtodivideby(x+2)anywaytocompletethefactorisation. We show both methods. The factor theorem states that in this case, f( 2) = 0, where f(x) is the polynomial. So 3( 2)3 +13( 2)2 +8( 2)+a = 0, giving 24+ − 52 16+a = 0, so a = 12. We can now − − − − − − divide the polynomial by (x+2). Alternatively, dividing the given polynomial by (x+2) by considering the x3 , x2 and x terms, but ignoring the constant term, gives: 3x3 +13x2 +8x+a = (x+2)(3x2 +7x 6) − and so a = 12, though that is actually not needed to answer the question. − Finally, we can factorise 3x2 +7x 6 to determine the answer. Alternatively, we can use the − suggested options: only options D and E give a constant term in the quadratic of 6, so it must be one of those. D expands to 3x2 7x 6 and E expands to 3x2+7x 6, so th − e answer is E. − − −",
@@ -1005,7 +1005,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 3,
-      "text": "line is drawn normal to the curve y = ² 5మ at the point on the curve where x = 1Ǥ his line cuts the xǦaxis at ܲ and the yǦaxis at ܳǤ he length of ܲܳ is",
+      "text": "line is drawn normal to the curve y= 2 x2 at the point on the curve where x=1. his line cuts the x-axis at P and the y-axis at Q. he length of PQ is",
       "options": {
         "A": "3ξ5/2"
       },
@@ -1023,7 +1023,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 4,
-      "text": "he sequence ௡ is defined by the ruleǣ ௡ = (-1)௡-(-1)௡¹(-1)௡ା² for ൒1Ǥ ind the value of ෍௡ ³ଽ ௡ୀ¹",
+      "text": "he sequence an is defined by the rule: an=(-1)n-(-1)n-1+(-1)n+2 for n≥1. ind the value of ෍an 39 n1",
       "options": {
         "A": "Ȃ 39",
         "B": "Ȃ 3"
@@ -1042,7 +1042,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 5,
-      "text": "What is the total area enclosed between the curve y = x²-1, the x-axis and the lines x = -2 and x = 2 ?",
+      "text": "What is the total area enclosed between the curve y=x2-1, the x-axis and the lines x=-2 and x=2 ?",
       "options": {
         "A": "4/3"
       },
@@ -1060,7 +1060,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 6,
-      "text": "ǡ ǡ and are each mixtures of red and white paintǤ he percentage by volume of red paint in is 30ΨǤ he percentage by volume of red paint in is 20ΨǤ he mixtures ǡ ǡ and are combined in the proportion 12 ǣ 5 ǣ 3 respectivelyǤ f the resulting mixture contains 25Ψ by volume of red paintǡ what percentage by volume of mixture is red paintǫ",
+      "text": ", , and are each mixtures of red and white paint. he percentage by volume of red paint in is 30Ψ. he percentage by volume of red paint in is 20Ψ. he mixtures , , and are combined in the proportion 12 : 5 : 3 respectively. f the resulting mixture contains 25Ψ by volume of red paint, what percentage by volume of mixture is red paint?",
       "options": {
         "A": "25Ψ"
       },
@@ -1078,7 +1078,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 7,
-      "text": "60Ψ of a sports clubǯs members are women and the remainder are menǤ his sports club offers the opportunity to play tennis or cricketǤ very member plays exactly one of the two sportsǤ ² ହ of the male members of the club play cricketǢ ² ³ of the cricketing members of the club are womenǤ hat is the probability that a member of the clubǡ chosen at randomǡ is a woman who plays tennisǫ",
+      "text": "60Ψ of a sports club's members are women and the remainder are men. his sports club offers the opportunity to play tennis or cricket. very member plays exactly one of the two sports. 2 5 of the male members of the club play cricketǢ 2 3 of the cricketing members of the club are women. hat is the probability that a member of the club, chosen at random, is a woman who plays tennis?",
       "options": {
         "A": "1/5"
       },
@@ -1096,7 +1096,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 8,
-      "text": "Find the maximum angle x in the range 0ι ൑x൑360ι which satisfies the equation cos²(2x)ξ3 sin(2x)-7 4 = 0",
+      "text": "Find the maximum angle x in the range 0ι ≤x≤360ι which satisfies the equation cos2(2x)+ξ3 sin(2x)-7 4 =0",
       "options": {
         "A": "30ι",
         "B": "60ι",
@@ -1120,9 +1120,9 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 9,
-      "text": "he line segment joining the points (3ǡ 3) and (7ǡ 5) is a diameter of a circleǤ his circle is translated by 3 units in the negative xǦdirectionǡ then reflected in the xǦaxisǡ and then enlarged by a scale factor of 4 about the centre of the resulting circleǤ he equation of the final circle is",
+      "text": "he line segment joining the points (3, 3) and (7, 5) is a diameter of a circle. his circle is translated by 3 units in the negative x-direction, then reflected in the x-axis, and then enlarged by a scale factor of 4 about the centre of the resulting circle. he equation of the final circle is",
       "options": {
-        "A": "(x-2)²(y-4)² = 320"
+        "A": "(x-2)2+(y-4)2=320"
       },
       "correctAnswer": "D",
       "workedSolution": "The initial circle looks like this: y (7,5) (3,3) x 3+7 3+5 The centre of the circle is at the midpoint of this diameter, which is , = (5,4), 2 2 and the radius is therefore (5 3)2+(4 3)2 = √5. − − p The transformations do the following to the centre and radius of the circle: Centre Radius original (5,4) √5 after translation (2,4) √5 after reflection (2, 4) √5 − after enlargement (2, 4) 4√5 − Therefore the final circle has equation (x 2) 2 +(y+4) 2 = (4√5) 2 = 80 − and the answer is D.",
@@ -1140,7 +1140,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 10,
-      "text": "ow many solutions does the equation xtan x = 1 have in the interval -2ߨ൑x൑2ߨ ǫ",
+      "text": "ow many solutions does the equation xtan x=1 have in the interval -2π≤x≤2π ?",
       "options": {
         "A": "0"
       },
@@ -1158,7 +1158,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 11,
-      "text": "he real roots of the equation 4²512 = 2²5ା³ are and rǡ where ൐rǤ he value of -r can be expressed as",
+      "text": "he real roots of the equation 42x+12 =22x+3 are p and q, where p>q. he value of p-q can be expressed as",
       "options": {
         "A": "3/4"
       },
@@ -1176,9 +1176,9 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 12,
-      "text": "right circular cylinder is contained within a sphere of radius 5 cm in such a way that the whole of the circumferences of both ends of the cylinder are in contact with the sphereǤ he diagram shows a planar cross section through the centre of the sphere and cylinderǤ indǡ in cubic centimetresǡ the maximum possible volume of the cylinderǤ",
+      "text": "right circular cylinder is contained within a sphere of radius 5 cm in such a way that the whole of the circumferences of both ends of the cylinder are in contact with the sphere. he diagram shows a planar cross section through the centre of the sphere and cylinder. ind, in cubic centimetres, the maximum possible volume of the cylinder.",
       "options": {
-        "A": "250ߨ"
+        "A": "250π"
       },
       "correctAnswer": "E",
       "workedSolution": "Let the radius of the cylinder be r. Then the diagram is as follows (with all measurements in cm), where we have drawn in two extra lines: r h 5 The5cmistheradiusofthesphereandhenceofthecircleshown(asthecrosssectionisthrough the centre of the sphere). Pythagoras’s theorem gives h2 + r2 = 52 , and the volume of the cylinder is V = πr2(2h) = π(52 h2)(2h) = 2π(25h h3). We can maximise this by differentiating with respect to h. (We − − could write everything in terms of r instead, but that would involve square roots.) dV 5 We have = 2π(25 3h2), which is zero when 25 = 3h2 , so h = . Substituting this into dh − √3 the formula for V gives the largest possible V as 25 5 500 500√3 V = 2π(5 2 h2 )h = 2π 25 = π = π − − 3 √3 3√3 9 hence the answer is E.",
@@ -1194,7 +1194,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 13,
-      "text": "ow many real roots does the equation 3xହ-10x³-120x30 = 0 haveǫ",
+      "text": "ow many real roots does the equation 3x5-10x3-120x+30 =0 have?",
       "options": {
         "A": "1"
       },
@@ -1212,7 +1212,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 14,
-      "text": "he terms of an infinite series are formed by adding together the corresponding terms in two infinite geometric seriesǡ and Ǥ he first term of and the first term of are each 4Ǥ n orderǡ the first three terms of the combined series are 8ǡ 3ǡ and ହ ସ hat is the sum to infinity of ǫ",
+      "text": "he terms of an infinite series are formed by adding together the corresponding terms in two infinite geometric series, and . he first term of and the first term of are each 4. n order, the first three terms of the combined series are 8, 3, and 5 4 hat is the sum to infinity of ?",
       "options": {
         "A": "32/5"
       },
@@ -1230,7 +1230,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 15,
-      "text": "he least possible value of the gradient of the curve y = (2x)(x-2)² at the point where x = 1ǡ as variesǡ is",
+      "text": "he least possible value of the gradient of the curve y=(2x+a)(x-2a)2 at the point where x=1, as a varies, is",
       "options": {
         "A": "-49/4"
       },
@@ -1248,9 +1248,9 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 16,
-      "text": "iven the simultaneous equations log¹଴2 log¹଴(y-1) = 2 log¹଴x log¹଴(y3 -3x) = 0 the values of y are",
+      "text": "iven the simultaneous equations log102 +log10(y-1)=2 log10x log10(y+3 -3x)=0 the values of y are",
       "options": {
-        "A": "5/2 േ3ξ5/2"
+        "A": "5/2 -3ξ5/2"
       },
       "correctAnswer": "C",
       "workedSolution": "The first equation involves the sum of two logarithms, so we can rewrite it as: log (2(y 1)) = log x2 10 10 − and so 2(y 1) = x2 . − The second equation becomes y+3 3x = 1, as log 1 = 0 for any base a. a − We therefore have two simultaneous equations: 2y 2 = x2 − y 3x+2 = 0. − We want to find the values of y, so we rewrite the second equation to eliminate x: y+2 x = and so the first equation becomes (y+2)2 2y 2 = − 9 or 18y 18 = y2 +4y+4 − which rearranges to give the quadratic y2 14y+22 = 0. The solutions to this quadratic are − 14 √142 4 22 ± − × = 7 72 22 = 7 √27 2 ± − ± p and so the correct answer is C. It would be good to check whether both of these solutions are valid (though the question does not require us to do so). To be valid, we require both x > 0 and y > 1. Since √27 < 6, we see that y > 1. Also, as x = 1 (y +2) and y > 0, it follows that x > 0. So there are, indeed, two valid solutions.",
@@ -1267,9 +1267,9 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 17,
-      "text": "is given that y = (1 2 cos x)cos 2x for 0 xߨ he complete set of values of x for which y is negative is",
+      "text": "is given that y=(1 +2 cos x)cos 2x for 0 <x<π he complete set of values of x for which y is negative is",
       "options": {
-        "A": "0 x గ ସ, ²గ ³x ³గ ସ"
+        "A": "0 <x< 4, 2 3<x< 3 4"
       },
       "correctAnswer": "D",
       "workedSolution": "The formula for y is the product of two factors, namely 1 + 2cosx and cos2x. The whole expression is negative when one of the two factors is positive and the other is negative. The factors change sign when they cross a point where the factor is zero, and we can find these points: • 1+2cosx = 0 when cosx = 1 , which is when x = 2π (within the range 0 < x < π). −2 3 • cos2x = 0 when x = π and when x = 3π. 4 4 We can now make a table showing the signs of the two factors in the different parts of the interval 0 < x < π. (This is a useful technique in general.) 0 < x < π x = π π < x < 2π x = 2π 2π < x < 3π x = 3π 3π < x < π 4 4 4 3 3 3 4 4 4 1+2cosx + + + 0 − − − cos2x + 0 0 + − − − y + 0 0 + 0 − − Therefore y is negative when π < x < 2π and when 3π < x < π, and so the answer is D. 4 3 4",
@@ -1286,9 +1286,9 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 18,
-      "text": "he function ¹5 ξ5మ య is defined for all x്0Ǥ he complete set of values of x for which the function is decreasing is",
+      "text": "he function 1-x ξx2 3 is defined for all x0. he complete set of values of x for which the function is decreasing is",
       "options": {
-        "A": "x൑-2ǡ x൐0"
+        "A": "x≤-2, x>0"
       },
       "correctAnswer": "A",
       "workedSolution": "This requires us to first differentiate the function. We therefore write 1 x 2 1 y = √3 − x2 = x −3 − x3 which we can differentiate to get d d x y = − 2 3 x −3 5 − 1 3 x − 2 3 This is zero when −3 2x − 5 3 − 1 3 x − 2 3 = 0, so multiplying by 3x3 to clear fractions in both the coefficients and in the powers gives 2 x = 0 − − so x = − 2. (We could also have obtained this by writing − x −3 5 = 1 x −3 2 and dividing one side by the other.) dy We next need to determine the sign of in each region. We note that the function is not dx defined at x = 0, so we have to deal with x < 0 and x > 0 separately. It is also not clear how dy to find the sign of directly from its given form, so we first factorise it, giving dx d d x y = − x − 5 3(2+x). (Incidentally, this gives yet another way to see that the derivative is zero at x = 2.) We can − now work out the signs of the two factors, and hence of the derivative, in the various ranges: x < 2 x = 2 2 < x < 0 x > 0 5 − − − x −3 + − − − 2+x 0 + + − dy + 0 + dx − It is therefore increasing in the region x < 2 and x > 0. (It it not increasing at x = 2, but − − rather it is stationary at that point.) The correct answer is therefore A (though the question mistakenly says x 6 2). −",
@@ -1306,10 +1306,10 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 19,
-      "text": "he coefficient of x³ in the expansion of (1 2x3x²)଺ is equal to twice the coefficient of xସ in the expansion of (1 -x²)ହǤ ind all possible values of the constant Ǥ",
+      "text": "he coefficient of x3 in the expansion of (1 +2x+3x2)6 is equal to twice the coefficient of x4 in the expansion of (1 -ax2)5. ind all possible values of the constant a.",
       "options": {
-        "A": "േ 2ξ2",
-        "B": "േ ξ17"
+        "A": "- 2ξ2",
+        "B": "- ξ17"
       },
       "correctAnswer": "B",
       "workedSolution": "We expand the first expression up to powers of x3 to find its coefficient. We can think of the first expression as (1+(2x+3x2))6 and use the binomial theorem to expand it. We note that the first few binomial coefficients are 6 6 6 6 5 6 6 5 4 = 1; = 6; = × = 15; = × × = 20. 0 1 2 2! 3 3! We thus have (1+(2x+3x2 )) = 1+ 6 (2x+3x2 )+ 6 (2x+3x2 ) + 6 (2x+3x2 ) + 1 2 3 ··· = 1+6 ( 2x+3x2 )+15 (( 2x) 2 +2(2x)(3x 2 ) + )+20((2x) 3 + )+ ··· ··· ··· where we have stopped when the powers reach 3. We can read off the coefficient of x3 from this; it is 15 2 2 3+20 8 = 340. × × × × We can expand (1 ax2)5 similarly, and obtain − 1+ ( ax2 )+ ( ax2 ) + = 1 5ax2 +10a2x4 + 1 − 2 − ··· − ··· so the coefficient of x4 is 10a2 . We are told how these two coefficients relate to each other: we have 340 = 2 10a2 × so a2 = 17 and a = √17, giving the answer as option B. ±",
@@ -1326,7 +1326,7 @@
       "year": "2016",
       "paper": 1,
       "questionNumber": 20,
-      "text": "he diagram shows a squareǦbased pyramid with base ܴܲܳܵ and vertex ܱǤ ll the edges of the pyramid are of length 20 metresǤ ind the shortest distanceǡ in metresǡ along the outer surface of the pyramid from ܲ to the midpoint of ܱܴǤ",
+      "text": "he diagram shows a square-based pyramid with base PQRS and vertex O. ll the edges of the pyramid are of length 20 metres. ind the shortest distance, in metres, along the outer surface of the pyramid from P to the midpoint of OR.",
       "options": {
         "A": "10ඥ5 -2ξ3"
       },
@@ -1345,7 +1345,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 1,
-      "text": "Find the value of ׬ ቀx²- ସ 5మቁ ² ² ¹ dx",
+      "text": "Find the value of ׬ (x2- 4 x2) 2 2 1 dx",
       "options": {
         "A": "43/15"
       },
@@ -1363,9 +1363,9 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 2,
-      "text": "(x) = (x²5)(2x) ξx³ ర ǡ x൐0 hich one of the following is equal to ᇱ(x) ǫ",
+      "text": "f(x)= (x2+5)(2x) ξx3 , x>0 hich one of the following is equal to fᇱ(x) ?",
       "options": {
-        "A": "8x ଽ ସ40/3 x ¹ ସ"
+        "A": "8x 9 4+40/3 x 1 4"
       },
       "correctAnswer": "B",
       "workedSolution": "We begin by expanding the brackets and simplifying the powers of x: 2x3+10x f(x) = x4 9 1 = 2x4 +10x4 so 5 3 f ′ (x) = 2 × 9 4 x4 +10 × 1 4 x −4 5 3 = 9 x4 + 5 x −4 which is option B.",
@@ -1381,7 +1381,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 3,
-      "text": "(xy)(x-y)൐-24 hich of the above statements isȀare true for every point in the regionǫ",
+      "text": "(x+y)(x-y)>-24 hich of the above statements isȀare true for every point in the region?",
       "options": {
         "A": "none",
         "B": "1 only"
@@ -1400,7 +1400,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 4,
-      "text": "ive sealed urnsǡ labelled ǡ ǡ ǡ ǡ and ǡ each contain the same (nonǦzero) number of ballsǤ he following statements are attached to the urnsǤ rn his urn contains one or four ballsǤ rn his urn contains two or four ballsǤ rn his urn contains more than two balls and fewer than five ballsǤ rn his urn contains one or two ballsǤ rn his urn contains fewer than three ballsǤ xactly one of the urns has a true statement attached to itǤ hich urn is itǫ",
+      "text": "ive sealed urns, labelled , , , , and , each contain the same (non-zero) number of balls. he following statements are attached to the urns. rn his urn contains one or four balls. rn his urn contains two or four balls. rn his urn contains more than two balls and fewer than five balls. rn his urn contains one or two balls. rn his urn contains fewer than three balls. xactly one of the urns has a true statement attached to it. hich urn is it?",
       "options": {
         "A": "rn"
       },
@@ -1418,7 +1418,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 5,
-      "text": "onsider the statementǣ (ȗ) whole number is prime if it is 1 less or 5 less than a multiple of 6Ǥ ow many counterexamples to (ȗ) are there in the range 0 50 ǫ",
+      "text": "onsider the statement: (*) whole number n is prime if it is 1 less or 5 less than a multiple of 6. ow many counterexamples to (*) are there in the range 0 <n<50 ?",
       "options": {
         "A": "2"
       },
@@ -1461,9 +1461,9 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 7,
-      "text": "he four real numbers ǡ ǡ ǡ and are all greater than 1Ǥ uppose that they satisfy the equation log௖ = (log௔)²Ǥ se some of the lines given to construct a proof thatǡ in this caseǡ it follows that (ȗ) log௕ = (log௔)(log௔)Ǥ (1) et x = log௔ and y = log௔ (2) = (5)² (3) = ൫5మ൯ (4) = 5௬ (5) = (௬)൫5మ൯ (6) = ((௬)5)² (7) = (5)5௬ (8) = ൫௬మೣ൯ (9) = ൫5మ௬൯",
+      "text": "he four real numbers a, b, c, and d are all greater than 1. uppose that they satisfy the equation logcd=(logab)2. se some of the lines given to construct a proof that, in this case, it follows that (*) logbd=(logab)(logac). (1) et x=logab and y=logac (2) d=(cx)2 (3) d=c(x2) (4) d=bxy (5) d=(ay)(x2) (6) d=((ay)x)2 (7) d=(ax)xy (8) d=a(y2x) (9) d=a(x2y)",
       "options": {
-        "A": "(1)Ǥ hen (2)ǡ so (6)ǡ so (8)ǡ so (7)ǡ and therefore (4)ǡ hence (ȗ) as requiredǤ"
+        "A": "(1). hen (2), so (6), so (8), so (7), and therefore (4), hence (*) as required."
       },
       "correctAnswer": "C",
       "workedSolution": "The proof certainly begins with (1): Let x = log b and y = log c. a a We are then given a choice of writing d in various ways (line (2), (3) or (4)). We are given log d = (log b)2 c a so we can rewrite this using x as log d = x2. Therefore d = c(x2), which is line (3). c Our next choice is between lines (5) and (7) (these are the only options, as the correct answer must be C or D); these are equivalent, but expressed differently. How can we get from d = c(x2) to d being a power of a? We must rewrite c in terms of y: since y = log c, it follows that c = ay, a so d = (ay)(x2), which is line (5). Without doing any more work, the answer must therefore be option C, and the whole proof reads as follows: Suppose that log d = (log b)2. c a (1) Let x = log b and y = log c. Then (3) d = c(x2), so (5) d = (ay)(x2), so a a (9) d = a(x2y), so (7) d = (ax)xy, and therefore (4) d = bxy, hence (*) as required.",
@@ -1479,7 +1479,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 8,
-      "text": "region is defined by the inequalities xy൐6 and x-y൐-4 onsider the three statementsǣ 1 x ൐ 1 2 y ൐ 5 3",
+      "text": "region is defined by the inequalities x+y>6 and x-y>-4 onsider the three statements: 1 x > 1 2 y > 5 3",
       "options": {
         "A": "",
         "B": "",
@@ -1501,7 +1501,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 9,
-      "text": "riangles ܣܤܥ and ܻܼܺ have the same areaǤ hich of these extra conditionsǡ taken independentlyǡ would imply that they are congruentǫ (1) ܣܤ = ܻܺ ܉ܖ܌ ܤܥ = ܻܼ (2) ܣܤ = ܻܺ ܉ܖ܌ סܣܤܥ = סܻܼܺ (3) סܣܤܥ = סܻܼܺ ܉ܖ܌ סܤܥܣ = סܻܼܺ ondition (1) ondition (2) ondition (3)",
+      "text": "riangles ABC and XYZ have the same area. hich of these extra conditions, taken independently, would imply that they are congruent? (1) AB=XY ATD BC=YZ (2) AB=XY ATD ∠ABC=∠XYZ (3) ∠ABC=∠XYZ ATD ∠BCA=∠YZX ondition (1) ondition (2) ondition (3)",
       "options": {
         "A": "oes not imply congruent oes not imply congruent oes not imply congruent"
       },
@@ -1519,9 +1519,9 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 10,
-      "text": "this question x and y are nonǦzero real numbersǤ hich one of the following is sufficient to conclude that xy ǫ",
+      "text": "this question x and y are non-zero real numbers. hich one of the following is sufficient to conclude that x<y ?",
       "options": {
-        "A": "xସyସ"
+        "A": "x4<y4"
       },
       "correctAnswer": "E",
       "workedSolution": "A key point in this question is that x and y are permitted to be positive or negative. To show that a condition is not sufficient, we need to find values of x and y where the condition holds but x > y. To show that a condition is sufficient, we must prove it to be the case. We can argue algebraically or graphically; we start with an algebraic approach. A If y = 2 and x = 1, the condition holds but x > y. − B We do not even need to look at negative cases here: if x and y are both positive, we can take fourth roots and deduce that y < x, for example y = 1 and x = 2. C If x = 2 and y = 1, then x 1 < y 1 but x > y. − − D Positive values of x and y do not work, but if we take x = 1 and y = 1, then y 1 < x 1 − − − but x > y. E This looks quite plausible: if we raise this inequality to the power of 5 (which we are allowed to do, as f(x) = x5 is an increasing function), we get x3 < y3. We can now take cube roots (again, this is permissible as f(x) = x3 = √3 x in an increasing function) to give x < y. So this condition is sufficient. 3 3 F Arguing as in part E, y5 < x5 implies y < x, so this is not sufficient. Alternatively, we can just substitute in the values x = 1, y = 1. − Thus the answer is option E. We can also see this by looking at the graphs of the functions f(x) = x4, f(x) = x 1 and − f(x) = x5: if these are strictly increasing functions, then x < y if and only if f(x) < f(y), while if they are strictly decreasing functions, then x < y if and only if f(x) > f(y). These are sketches of the graphs of these functions: y y y x x x f(x) = x4 f(x) = x − 1 f(x) = x5 Neither of the first two functions is strictly increasing or strictly decreasing (for f(x) = x 1, note − that the function decreases when x < 0, but f( 1) < f(1), so it is not a decreasing function). − The third function is strictly increasing, so the answer is option E.",
@@ -1537,7 +1537,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 11,
-      "text": "(x) is a polynomial with real coefficientsǤ he equation (x) = 0 has exactly two real rootsǡ x = - and x = ǡ where ൐ 0Ǥ onsider the following three statementsǣ 1 Ԣ(x) = 0 for exactly one value of x between - and 2 he area between the curve y = (x)ǡ the xǦaxis and the lines x = - and x = is given by 2 ׬ (x) dx ௣ ଴ 3 he graph of y = -(-x) intersects the xǦaxis at the points x = - and x = only hich of the above statements must be trueǫ",
+      "text": "f(x) is a polynomial with real coefficients. he equation f(x)=0 has exactly two real roots, x=-p and x=p, where p > 0. onsider the following three statements: 1 fԢ(x)=0 for exactly one value of x between -p and p 2 he area between the curve y=f(x), the x-axis and the lines x=-p and x=p is given by 2 ׬ f(x) dx ௣ 0 3 he graph of y=-f(-x) intersects the x-axis at the points x=-p and x=p only hich of the above statements must be true?",
       "options": {
         "A": "none"
       },
@@ -1555,9 +1555,9 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 12,
-      "text": "he first term of an arithmetic sequence is and the common difference is Ǥ he sum of the first terms is denoted by ܵ௡Ǥ f ଼ܵ൐3ܵ଺ǡ what can be deduced about the sign of and the sign of ǫ",
+      "text": "he first term of an arithmetic sequence is a and the common difference is d. he sum of the first n terms is denoted by Sn. f S8>3S6, what can be deduced about the sign of a and the sign of d?",
       "options": {
-        "A": "both and are negative"
+        "A": "both a and d are negative"
       },
       "correctAnswer": "F",
       "workedSolution": "The formula for S in terms of a and d is S = 1n(2a+(n 1)d). Substituting n = 8 and n = 6 n n 2 − gives S = 4(2a+7d) S = 3(2a+5d) so the condition S > 3S becomes 8 6 4(2a+7d) > 3 3(2a+5d). × Expanding the brackets gives 8a+28d > 18a+45d, which on rearranging gives 8a > 17d, or − d < 8 a. −17 If a is positive, then 8 a is negative, so d must be negative. If a is negative, then 8 a is −17 −17 positive, so d could be positive or negative. So a can be positive or negative, as can d. We therefore cannot deduce the sign of either a or d, and so the correct option is F.",
@@ -1573,7 +1573,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 13,
-      "text": "this questionǡ ǡ ǡ and are positive integersǤ he following is an attempted proof of the false statementǣ f divides ǡ then divides or divides Ǥ ሾǮ divides ǯ means Ǯ is a factor of ǯሿ hich line contains the error in this proofǫ 1Ǥ he statement is equivalent to Ǯif does not divide and does not divide then does not divide ǯǤ 2Ǥ uppose does not divide and does not divide Ǥ hen the remainder when dividing by is ݎǡ where 0 ݎǡ and the remainder when dividing by is ݏǡ where 0 ݏǤ 3Ǥ o = xݎ and = yݏ for some integers x and yǤ 4Ǥ hus = (xyxݏyݎ)ݎݏǤ 5Ǥ o the remainder when dividing by is ݎݏǤ 6Ǥ ince ݎ൐0 and ݏ൐0ǡ it follows that ݎݏ൐0Ǥ 7Ǥ ence does not divide Ǥ",
+      "text": "this question, a, b, and c are positive integers. he following is an attempted proof of the false statement: f a divides bc, then a divides b or a divides c. ['a divides bc' means 'a is a factor of bc'] hich line contains the error in this proof? 1. he statement is equivalent to 'if a does not divide b and a does not divide c then a does not divide bc'. 2. uppose a does not divide b and a does not divide c. hen the remainder when dividing b by a is r, where 0 <r<a, and the remainder when dividing c by a is s, where 0 <s<a. 3. o b=ax+r and c=ay+s for some integers x and y. 4. hus bc=a(axy+xs+yr)+rs. 5. o the remainder when dividing bc by a is rs. 6. ince r>0 and s>0, it follows that rs>0. 7. ence a does not divide bc.",
       "options": {
         "A": "ine 1"
       },
@@ -1594,10 +1594,10 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 14,
-      "text": "(x) = xସx³x²x݁ǡ where ǡ ǡ ǡ ǡ and ݁ are real numbersǤ uppose (x) = 1 has distinct real solutionsǡ (x) = 2 has r distinct real solutionsǡ (x) = 3 has ݎ distinct real solutionsǡ and (x) = 4 has ݏ distinct real solutionsǤ hich one of the following is not possibleǫ",
+      "text": "f(x)=ax4+bx3+cx2+dx+e, where a, b, c, d, and e are real numbers. uppose f(x)=1 has p distinct real solutions, f(x)=2 has q distinct real solutions, f(x)=3 has r distinct real solutions, and f(x)=4 has s distinct real solutions. hich one of the following is not possible?",
       "options": {
-        "A": "= 1ǡ r = 2ǡ ݎ = 4 and ݏ = 3",
-        "B": "= 1ǡ r = 3ǡ ݎ = 2 and ݏ = 4"
+        "A": "p=1, q=2, r=4 and s=3",
+        "B": "p=1, q=3, r=2 and s=4"
       },
       "correctAnswer": "B",
       "workedSolution": "The number of solutions to f(x) = 1 is the number of times the graph of y = f(x) intersects with the line y = 1, and similarly for the other three cases. So we need to think about possible shapes of y = f(x). We assume that a = 0 for now, so that we are dealing with a quartic; this will be enough to answer the question. (Each of the given options has one of p, q, r or s equal to 4, which is impossible if the curve is a cubic, quadratic or linear.) A quartic with a > 0 either has a W-shape, or it is a bit like a quadratic in that it has exactly one local minimum. If a < 0, the possibilities are the reflections of these. We can then try to construct curves with the given conditions. A p = 1 and q = 2 indicates that a > 0 and that y = 1 is tangent to the curve. So something like this would work, where we have drawn dashed lines to show y = 1, y = 2, y = 3 and y = 4. (We could have left out the y-axis for clarity.) y x (Anaccurately-plottedquarticwouldnotlookquitelikethis, asyoucanseeifyouusegraph- drawingsoftware. Nevertheless,thegeneralshapecouldbecorrect,withthestationarypoints in roughly the locations shown.) We could also draw this schematically as: y x We will use this schematic representation for the rest of the cases.",
@@ -1613,9 +1613,9 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 15,
-      "text": "onsider the quadratic (x) = x²-2xr and the statementǣ (ȗ) (x) = 0 has two real roots whose difference is greater than 2 and less than 4Ǥ hich one of the following statements is true if and only if (ȗ) is trueǫ",
+      "text": "onsider the quadratic f(x)=x2-2px+q and the statement: (*) f(x)=0 has two real roots whose difference is greater than 2 and less than 4. hich one of the following statements is true if and only if (*) is true?",
       "options": {
-        "A": "r²r4"
+        "A": "q<p2<q+4"
       },
       "correctAnswer": "D",
       "workedSolution": "We start by finding the roots of f(x) = 0. They are given by the quadratic formula, and are 2p ( 2p)2 4q r ,r = ± − − = p p2 q. 1 2 p 2 ± − p The roots are real if and only if the discriminant is non-negative, so if and only if p2 q > 0. − The difference between the roots is r r = 2 p2 q, so the condition ( ) is true if and only 2 1 − − * if p p2 q > 0 and 2 < 2 p2 q < 4 − − p so it is true if and only if p2 q > 0 and 1 < p2 q < 2 − − p which is true if and only if p2 q > 0 and 1 < p2 q < 4 − − The first condition is implied by the second condition, so both conditions are true if and only if 1 < p2 q < 4,whichwecanrearrangetoq+1 < p2 < q+4. Subtracting1givesq < p2 1 < q+3, − − which is condition D. We can also show that the other four statements are not true if and only if ( ) is true, as follows. * Statement A fails, because the left inequality q < p2 is not the same as q < p2 1. Statement A − is true if ( ) is true, but ( ) could be true without statement A being true; in other words * * “statement A is true only if ( ) is true” is false. * Statement B fails, because this requires p > 0, whereas we could have p < 0; thus, statement B is true only if ( ) is true, but “statement B is true if ( ) is true” is false. * * Statement C fails, because this allows for the difference between the roots to be exactly 2 or 4. So statement C is true if ( ) is true, but “statement C is true only if ( ) is true” is false. * * Finally, statement E fails, because the second inequality is equivalent to p2 1 < q + 4, so − similarly to statement A, statement E is true if ( ) is true, but “statement E is true only if ( ) is * * true” is false. So the correct option is D.",
@@ -1633,9 +1633,9 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 16,
-      "text": "the figureǡ ܴܲܳܵ is a trapezium with ܲܳ parallel to ܴܵǤ he diagonals of the trapezium meet at ܺǤ ܷ lies on ܵܲ and ܶ lies on ܴܳ such that ܷܶ is a line segment through ܺ parallel to ܲܳǤ he length of ܲܳ is 12 cm and the length of ܴܵ is 3 cmǤ hatǡ in centimetresǡ is the length of ܷܶǫ",
+      "text": "the figure, PQRS is a trapezium with PQ parallel to SR. he diagonals of the trapezium meet at X. U lies on SP and T lies on RQ such that UT is a line segment through X parallel to PQ. he length of PQ is 12 cm and the length of SR is 3 cm. hat, in centimetres, is the length of UT?",
       "options": {
-        "A": "4Ǥ2"
+        "A": "4. 2"
       },
       "correctAnswer": "C",
       "workedSolution": "There are several pairs of similar triangles in this diagram. We note that SUX and SPQ are similar, RXT and RPQ are similar, and XSR and XQP are similar. The last pair is the most helpful to start with, as we know the lengths of two corresponding sides: SR = 3 and QP = 12, so the scale factor is 12 = 4. Thus the height of XQP (from X) is 4 times the height of XSR (again from X). It follows that UP = 4SU, and so SP = 5SU. Since SUX is similar to SPQ, and SP = 5SU, we must have PQ = 5UX, so UX = 1PQ = 12. Likewise, XT = 12, so UT = 24 = 4.8 and the 5 5 5 5 correct answer is C. We could alternatively have used the similarity of triangles PUX and PSR, and of triangles QXT and QSR; we would reach the same result.",
@@ -1651,7 +1651,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 17,
-      "text": "onsider these simultaneous equationsǡ where is a constantǣ y = 3 sin x2 y = x hich of the following statements isȀare trueǫ 1 or some value of ǣ there is exactly one solution with 0 ൑x൑ߨ and there is at least one solution with Ȃ ߨx0Ǥ 2 or some value of ǣ there is exactly one solution with 0 ൑x൑ߨ and there are no solutions with Ȃ ߨx0Ǥ 3 or some value of ǣ there is exactly one solution with 0 ൑x൑ߨ and there are no solutions with x൐ߨǤ",
+      "text": "onsider these simultaneous equations, where c is a constant: y=3 sin x+2 y=x+c hich of the following statements isȀare true? 1 or some value of c: there is exactly one solution with 0 ≤x≤π and there is at least one solution with Ȃ π<x<0. 2 or some value of c: there is exactly one solution with 0 ≤x≤π and there are no solutions with Ȃ π<x<0. 3 or some value of c: there is exactly one solution with 0 ≤x≤π and there are no solutions with x>π.",
       "options": {
         "A": "none"
       },
@@ -1671,9 +1671,9 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 18,
-      "text": "onsider this statement about a function (x)ǣ (ȗ) f ൫(x)൯ ²൑1 for all -1 ൑x൑1 then ׬ ൫(x)൯ ² ¹ ¹ dx൑׬ (x) ¹ ¹ dx hich one of the following functions provides a counterexample to (ȗ)ǫ",
+      "text": "onsider this statement about a function f(x): (*) f (f(x)) 2≤1 for all -1 ≤x≤1 then ׬ (f(x)) 2 1 -1 dx≤׬ f(x) 1 -1 dx hich one of the following functions provides a counterexample to (*)?",
       "options": {
-        "A": "(x) = x1/2"
+        "A": "f(x)=x+1/2"
       },
       "correctAnswer": "D",
       "workedSolution": "For a function to be a counterexample to this ‘if’ statement, the first condition (the antecedent) must be true but the second condition (the consequent) must be false. So we first check whether these functions satisfy the condition f(x) 2 6 1 for all 1 6 x 6 1: − A This function goes from 1 to 3 as x goes from 1 to 1. So when x = 1, f(x) 2 = (3)2 > 1. −2 2 − 2 So this function does not satisfy the antecedent. B Similarly to A, when x = 1, f(x) = 3, so f(x) 2 > 1 and this function also does not −2 −2 satisfy the antecedent. C When x = 1, f(x) = 2 so f(x) > 1 and this function does not satisfy the antecedent. D This function looks as though it might satisfy the antecedent, as it does not obviously fail to do so: f( 1) = f(0) = f(1) = 0, so the cubic graph has two stationary points in the interval − 1 6 x 6 1. We can locate these by differentiating: − f (x) = 1 3x2 ′ − so f (x) = 0 when x = 1 . As ′ ±√3 f 1 bigr) = 1 1 = 2 < 1 and f 1 = 1 + 1 = 2 > 1, √3 √3 − 3√3 3√3 −√3 −√3 3√3 −3√3 − we see that the function lies between 2 and 2 when 1 6 x 6 1, so f(x) 2 6 1 in this −3√3 3√3 − interval, and the antecedent is satisfied. E AsinC,whenx = 1,f(x) = 2so f(x) > 1andthisfunctiondoesnotsatisfytheantecedent. F As with D, f( 1) = f(0) = f(1) = 0, so we look for stationary points of the function. We − have f (x) = 2x 4x3 = 2x(1 2x2) ′ − − so f (x) = 0 when x = 0 or x = 1 . We have f(0) = 0 and f 1 = 1 1 = 1, so the ′ ±√2 ±√2 2 − 4 4 function lies between 0 and 1 when 1 6 x 6 1, so the antecedent issatisfied. 4 − We therefore only need to consider the consequent condition for D and F. For the function in D, the integral on the right, 1 f(x)dx, is zero, since both x and x3 are odd functions: the area between 0 and 1 and the areRa−between 1 and 0 are equal, but the first is − above the x-axis and the second below it, so they cancel each other out. We could also see this 1 2 by calculating the integral explicitly. The integral on the left, f(x) dx, is the integral of a square, which is never negative, so the integral must be greaRt−erthan0. (We could likewise 1 2 1 find this exactly by explicit integration.) Thus f(x) dx > f(x)dx and the consequent 1 1 is false. Hence D provides a counterexample. R− R− For the sake of completeness, we will show that F is not a counterexample. Note that 0 6 f(x) < 1 for all 1 6 x 6 1. This means that f(x) 2 6 f(x) for all 1 6 x 6 1, and so − − 1 f(x) 2 dx 6 1 f(x)dx. Thus F is not a counterexample. (We could, of course, find these 1 1 Rin−tegralsby expliRc−itly integrating.) The correct answer is therefore D.",
@@ -1689,7 +1689,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 19,
-      "text": "ome identical unit cubes are used to construct a threeǦdimensional object by gluing them together face to faceǤ ketches of this object are made by looking at it from the rightǦhand sideǡ from the front and from aboveǤ hese sketches are called the side elevationǡ the front elevationǡ and the plan view respectivelyǤ his is the side elevation of the objectǤ his is the front elevation of the objectǤ his is the plan view of the objectǤ ow many cubes were used to construct the objectǫ",
+      "text": "ome identical unit cubes are used to construct a three-dimensional object by gluing them together face to face. ketches of this object are made by looking at it from the right-hand side, from the front and from above. hese sketches are called the side elevation, the front elevation, and the plan view respectively. his is the side elevation of the object. his is the front elevation of the object. his is the plan view of the object. ow many cubes were used to construct the object?",
       "options": {
         "A": "exactly 6"
       },
@@ -1707,7 +1707,7 @@
       "year": "2016",
       "paper": 2,
       "questionNumber": 20,
-      "text": "ach interior angle of a regular polygon with sides is ³ ସ of each interior angle of a second regular polygon with ݉ sidesǤ ow many pairs of positive integers and ݉ are there for which this statement is trueǫ",
+      "text": "ach interior angle of a regular polygon with n sides is 3 4 of each interior angle of a second regular polygon with m sides. ow many pairs of positive integers n and m are there for which this statement is true?",
       "options": {
         "A": "none"
       },
@@ -1727,14 +1727,14 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 1,
-      "text": "iven that ௗ௬ ௗ5 = 3x²-²³5 5య, x്0 and y = 5 when x = 1ǡ find y in terms of xǤ",
+      "text": "iven that ௗy ௗx=3x2-2-3x x3, x0 and y=5 when x=1, find y in terms of x.",
       "options": {
-        "A": "y = 1/3 x³x²-3x¹6 2/3",
-        "B": "y = x³1/2 x²-3x¹6 1/2",
-        "C": "y = x³ x²-3x¹6",
-        "D": "y = x³x²-x¹4",
-        "E": "y = x³2x²-x¹3",
-        "F": "y = 3x³x²-x¹2 i 8&/(6 >7XUQ RYHU"
+        "A": "y=1/3 x3+x-2-3x-1+6 2/3",
+        "B": "y=x3+1/2 x-2-3x-1+6 1/2",
+        "C": "y=x3+ x-2-3x-1+6",
+        "D": "y=x3+x-2-x-1+4",
+        "E": "y=x3+2x-2-x-1+3",
+        "F": "y=3x3+x-2-x-1+2 i 8&/(6 >7XUQ RYHU"
       },
       "correctAnswer": "C",
       "workedSolution": "We are given the derivative of y, and we want to find y itself, so we need to integrate. We start by expanding the fraction: dy 2−3x = 3x2− dx x3 = 3x2−2x−3+3x−2 so we can now integrate term-by-term to get y = x3+x−2−3x−1+c Now as y = 5 when x = 1, we can substitute to give 5 = 13+1−2−3×1−1+c = −1+c so c = 6 and the answer is C. Commentary: It turns out that there is a subtlety in this question which we usually ignore at school level. The question assumes that there is a ‘simple’ formula for y in terms of x. Since the function is not defined at x = 0, it is possible that we have different constants when x > 0 and when x < 0, so we could have, for example, x3+x−2−3x−1+6 when x > 0 y = x3+x−2−3x−1+8 when x < 0 This may seem quite strange, but it would be a valid solution to the differential equation given in the question.",
@@ -1750,7 +1750,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 2,
-      "text": "he function is given by (x) = ቀ ² 5- ¹ ²5మቁ ² (x്0) hat is the value of ԢԢ(1) ǫ",
+      "text": "he function f is given by f(x) =( 2 x- 1 2x2) 2 (x0) hat is the value of fԢԢ(1) ?",
       "options": {
         "A": "-3",
         "B": "-1",
@@ -1773,7 +1773,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 3,
-      "text": "line ݈ has equation y = 6 -2x second line is perpendicular to ݈ and passes through the point (-6ǡ 0)Ǥ ind the area of the region enclosed by the two lines and the xǦaxisǤ",
+      "text": "line l has equation y=6 -2x second line is perpendicular to l and passes through the point (-6, 0). ind the area of the region enclosed by the two lines and the x-axis.",
       "options": {
         "A": "16 1/5",
         "B": "18",
@@ -1795,7 +1795,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 4,
-      "text": "hen (3x²8x-3) is multiplied by (x-1) and the resulting product is divided by (x1)ǡ the remainder is 24Ǥ hat is the value of ǫ",
+      "text": "hen (3x2+8x-3) is multiplied by (px-1) and the resulting product is divided by (x+1), the remainder is 24. hat is the value of p ?",
       "options": {
         "A": "-4",
         "B": "2",
@@ -1817,16 +1817,16 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 5,
-      "text": "ܵ is the complete set of values of x which satisfy both the inequalities x²-8x12 0 and 2x1 ൐9 he set ܵ can also be represented as a single inequalityǤ hich one of the following single inequalities represents the set ܵ ǫ",
+      "text": "S is the complete set of values of x which satisfy both the inequalities x2-8x+12 <0 and 2x+1 >9 he set S can also be represented as a single inequality. hich one of the following single inequalities represents the set S ?",
       "options": {
-        "A": "(x²-8x12)(2x1)0",
-        "B": "(x²-8x12)(2x1)൐0",
-        "C": "x²-10x24 0",
-        "D": "x²-10x24 ൐0",
-        "E": "x²-6x8 0",
-        "F": "x²-6x8 ൐0",
-        "G": "x2",
-        "H": "x൐6 i 8&/(6 >7XUQ RYHU"
+        "A": "(x2-8x+12)(2x+1)<0",
+        "B": "(x2-8x+12)(2x+1)>0",
+        "C": "x2-10x+24 <0",
+        "D": "x2-10x+24 >0",
+        "E": "x2-6x+8 <0",
+        "F": "x2-6x+8 >0",
+        "G": "x<2",
+        "H": "x>6 i 8&/(6 >7XUQ RYHU"
       },
       "correctAnswer": "C",
       "workedSolution": "Commentary: Thestartofthisseemslikeafairlystandardquestion: findthevaluesofx which satisfy a pair of inequalities. The options offered, though, seem far from standard, so we will have to think carefully once we have found the set S. We start by solving the two inequalities separately. The quadratic factorises as x2−8x+12 = (x−2)(x−6), so we are solving (x−2)(x−6) < 0 We can sketch the graph of y = (x−2)(x−6): 2 6 so we see that the first inequality is satisfied when 2 < x < 6 The second inequality is a linear inequality which immediately simplifies to 2x > 8 or x > 4 We can combine these two inequalities using a number line: 2 4 6 So the set S is given by 4 < x < 6 Our problem now is that none of the given options says 4 < x < 6. Most of them are in the form of quadratic inequalities. So we assume that one of the quadratic inequalities probably gives 4 < x < 6 when we ‘solve’ it. That, though, seems like a lot of work. We would do better to work in reverse and try to derive the quadratic inequality from 4 < x < 6. We could think about our earlier sketch, which helped us solve (x − 2)(x − 6) < 0 and gave 2 < x < 6. If we replace the 2 by a 4, we see that the inequality (x−4)(x−6) < 0 will give 4 < x < 6. We can expand this to get x2−10x+24 < 0, and so the correct answer is C.",
@@ -1843,7 +1843,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 6,
-      "text": "tangent to the circle x²y² = 144 passes through the point (20ǡ 0) and crosses the positive yǦaxisǤ hat is the value of y at the point where the tangent meets the yǦaxis ǫ",
+      "text": "tangent to the circle x2+y2=144 passes through the point (20, 0) and crosses the positive y-axis. hat is the value of y at the point where the tangent meets the y-axis ?",
       "options": {
         "A": "12",
         "B": "15",
@@ -1867,7 +1867,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 7,
-      "text": "he first three terms of an arithmetic progression are ǡ r and ² respectivelyǡ where 0 he first three terms of a geometric progression are ǡ ² and r respectivelyǤ ind the sum of the first 10 terms of the arithmetic progressionǤ",
+      "text": "he first three terms of an arithmetic progression are p, q and p2 respectively, where p < 0 he first three terms of a geometric progression are p, p2 and q respectively. ind the sum of the first 10 terms of the arithmetic progression.",
       "options": {
         "A": "23/8",
         "B": "95/8",
@@ -1888,12 +1888,12 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 8,
-      "text": "ind the complete set of values of x ǡ with 0 ൑x൑ߨǡ for which (1 -2 sin x)cos x൒0",
+      "text": "ind the complete set of values of x , with 0 ≤x≤π, for which (1 -2 sin x)cos x≥0",
       "options": {
-        "A": "0 ൑x൑ߨ 6ǡ ߨ 2 ൑x൑5ߨ 6",
-        "B": "0 ൑x൑ߨ 6ǡ 5ߨ 6 ൑x൑ߨ",
-        "C": "ߨ 6 ൑x൑ߨ 2ǡ 5ߨ 6 ൑x൑ߨ",
-        "D": "ߨ 6 ൑x൑5ߨ 6 i 8&/(6"
+        "A": "0 ≤x≤π 6, π 2 ≤x≤5π 6",
+        "B": "0 ≤x≤π 6, 5π 6 ≤x≤π",
+        "C": "π 6 ≤x≤π 2, 5π 6 ≤x≤π",
+        "D": "π 6 ≤x≤5π 6 i 8&/(6"
       },
       "correctAnswer": "A",
       "workedSolution": "Multiplying out the brackets does not look like a particularly useful approach (what would we do with the terms cosx and sinxcosx in the same inequality?), so we will leave the expression in its factored form. If we temporarily write a = 1−2sinx and b = cosx we will be able to see the structure of the problem a little more clearly. We want ab 0, and this will happen when either a 0 and b 0, or when a 0 and b 0. So we need to solve each of these simpler inequalities. We have 1−2sinx = 0 when sinx = 1, so when x = π or x = 5π. We can either sketch the 2 6 6 graph of y = 1−2sinx or try values to determine whether 1−2sinx is positive or negative in each range. Sketching the graph seems possibly hard, as there are multiple transformations, and it would be easy to make a mistake. So on this occasion, we’ll plug in values: x = 0 and x = π both give 1−2sinx = 1; while x = π gives 1−2sinx = −1. Therefore 1−2sinx 0 when 0 x π and when 5π x π 6 6 1−2sinx 0 when π x 5π 6 6 We can do similarly for cosx; this time we can think about the graph in our head, and we have cosx 0 when 0 x π cosx 0 when π x π We can now put everything together. Both expressions are greater than or equal to 0 when 0 x π, and they are both less than or equal to 0 when π x 5π. 6 2 6 Hence the answer is A.",
@@ -1910,7 +1910,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 9,
-      "text": "circle has equation x²y²-18x-22y178 = 0 regular hexagon is drawn inside this circle so that the vertices of the hexagon touch the circleǤ hat is the area of the hexagonǫ",
+      "text": "circle has equation x2+y2-18x-22y+178 =0 regular hexagon is drawn inside this circle so that the vertices of the hexagon touch the circle. hat is the area of the hexagon?",
       "options": {
         "A": "6",
         "B": "6ξ3",
@@ -1935,7 +1935,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 10,
-      "text": "curve ܥ has equation y = (x) where (x) = ³-6²x3x²-x³ and is realǤ he gradient of the normal to the curve ܥ at the point where x = -1 is ܯǤ hat is the greatest possible value of ܯ as variesǫ",
+      "text": "curve C has equation y=f(x) where f(x)=p3-6p2x+3px2-x3 and p is real. he gradient of the normal to the curve C at the point where x=-1 is M. hat is the greatest possible value of M as p varies?",
       "options": {
         "A": "- 3/2",
         "B": "-2/3",
@@ -1958,7 +1958,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 11,
-      "text": "he sequence x௡ is defined by the rules x¹ = 7 x௡ା¹ = ²³5೙ହ³ ହ5೙ା¹ he first three terms in the sequence are 7ǡ 3ǡ 1 hat is the value of x¹଴଴ ǫ",
+      "text": "he sequence xn is defined by the rules x1=7 xn+1= 23x೙-53 5x೙+1 he first three terms in the sequence are 7, 3, 1 hat is the value of x100 ?",
       "options": {
         "A": "-5",
         "B": "0",
@@ -1980,14 +1980,14 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 12,
-      "text": "he polynomial function (x) is such that (x)൐0 for all values of xǤ iven ׬ (x) ସ ² x = ܣǡ which one of the following statements must be correctǫ",
+      "text": "he polynomial function f(x) is such that f(x)>0 for all values of x. iven ׬ f(x) 4 2 dx=A, which one of the following statements must be correct?",
       "options": {
-        "A": "නሾ(x2) ² ଴ 1ሿ x = ܣ1",
-        "B": "නሾ(x2)1ሿ ² ଴ x = ܣ2",
-        "C": "නሾ(x2)1ሿ ସ ² x = ܣ1",
-        "D": "නሾ(x2)1ሿ ସ ² x = ܣ2",
-        "E": "නሾ(x2)1ሿ ଺ ସ x = ܣ1",
-        "F": "නሾ(x2)1ሿ ଺ ସ x = ܣ2 i 8&/(6"
+        "A": "න[f(x+2) 2 0 +1] dx=A+1",
+        "B": "න[f(x+2)+1] 2 0 dx=A+2",
+        "C": "න[f(x+2)+1] 4 2 dx=A+1",
+        "D": "න[f(x+2)+1] 4 2 dx=A+2",
+        "E": "න[f(x+2)+1] 6 4 dx=A+1",
+        "F": "න[f(x+2)+1] 6 4 dx=A+2 i 8&/(6"
       },
       "correctAnswer": "B",
       "workedSolution": "We have f(x)dx = A, and the question asks about f(x+2)dx between various limits. The graph of y = f(x+2) is the graph of y = f(x) translated left by 2 units, so we can draw a sketch to see what effect this has on the area between x = 2 and x = 4: y y x x 0 2 4 0 2 4 4 2 This means that f(x)dx = f(x+2)dx = A 2 0 (If you have learnt about integration by substitution, you can also show this as follows: writing 4 2 x = u+2 gives dx = du, and u = x−2, so f(x)dx = f(u+2)du) 2 0 Therefore the answer is either A or B. We have 2 2 2 [f(x+2)+1]dx = f(x+2)dx+ 1dx 0 0 0 The first integral equals A, as we have shown, and 1dx = 2, so the whole integral equals A+2 and the correct answer is B.",
@@ -2003,7 +2003,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 13,
-      "text": "the expansion of (x)ହ the coefficient of xସ is 8 times the coefficient of x²Ǥ iven that and are nonǦzero positive integersǡ what is the smallest possible value of ǫ",
+      "text": "the expansion of (a+bx)5 the coefficient of x4 is 8 times the coefficient of x2. iven that a and b are non-zero positive integers, what is the smallest possible value of a+b ?",
       "options": {
         "A": "3",
         "B": "4",
@@ -2027,14 +2027,14 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 14,
-      "text": "he solution of the simultaneous equations 253 ൈ2௬ = 3 2²5-9 ൈ2²௬ = 6 is x = ǡ y = rǤ ind the value of -r",
+      "text": "he solution of the simultaneous equations 2x+3 ×2y=3 22x-9 ×22y=6 is x=p, y=q. ind the value of p-q",
       "options": {
         "A": "5/12",
         "B": "7/3",
-        "C": "log²5/12",
-        "D": "log²7/3",
-        "E": "log² 9",
-        "F": "log² 15 i 8&/(6"
+        "C": "log25/12",
+        "D": "log27/3",
+        "E": "log2 9",
+        "F": "log2 15 i 8&/(6"
       },
       "correctAnswer": "F",
       "workedSolution": "The equations involve 2x and 22x = (2x)2, so we write a = 2x; likewise we write b = 2y, and so our equations become: a+3b = 3 a2−9b2 = 6 The first equation gives a = 3−3b, which we can substitute into the second equation to obtain (3−3b)2−9b2 = 6 which expands to 9−18b = 6, and hence b = 1 and a = 5 6 2 Another way to solve these simultaneous equations is to note that the second one can be written as (a+3b)(a−3b) = 6, using the identity for the difference of two squares. Since a+3b = 3, this gives a−3b = 2, from which we can again deduce a and b. We can now find x and y: x = log a = log 5 = p 2 2 2 y = log b = log 1 = q 2 2 6 and hence 5 1 5 1 p−q = log −log = log ÷ = log 15 2 2 2 6 2 2 6 2 Thus the correct answer is F.",
@@ -2051,7 +2051,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 15,
-      "text": "is given that (x) = -2x²10 onsider the following three curvesǣ (૚) y = (x) (૛) y = (x1) (૜) the curve y = (x1) reflected in the line y = 6 he trapezium rule is used to estimate the area under each of these three curves between x = 0 and x = 1Ǥ tate whether the trapezium rule gives an overestimate or underestimate for each of these areasǤ (૚) (૛) (૜)",
+      "text": "is given that f(x)=-2x2+10 onsider the following three curves: (૚) y=f(x) (૛) y=f(x+1) (૜) the curve y=f(x+1) reflected in the line y=6 he trapezium rule is used to estimate the area under each of these three curves between x=0 and x=1. tate whether the trapezium rule gives an overestimate or underestimate for each of these areas. (૚) (૛) (૜)",
       "options": {
         "A": "underestimate underestimate underestimate",
         "B": "underestimate underestimate overestimate",
@@ -2076,15 +2076,15 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 16,
-      "text": "he functions and ݃ are given by (x) = 3x²12x4 and ݃(x) = x³6x²9x-8Ǥ hat is the complete set of values of x for which one of the functions is increasing and the other decreasingǫ",
+      "text": "he functions f and g are given by f(x)=3x2+12x+4 and g(x)=x3+6x2+9x-8. hat is the complete set of values of x for which one of the functions is increasing and the other decreasing?",
       "options": {
-        "A": "x൒-1",
-        "B": "x൑-1",
-        "C": "-3 ൑x൑-2ǡ x൒-1",
-        "D": "x൑-2ǡ x൒-1",
-        "E": "x൑-3ǡ -2 ൑x൑-1",
-        "F": "x൑-3ǡ x൒-2",
-        "G": "-2 ൑x൑-1 i 8&/(6"
+        "A": "x≥-1",
+        "B": "x≤-1",
+        "C": "-3 ≤x≤-2, x≥-1",
+        "D": "x≤-2, x≥-1",
+        "E": "x≤-3, -2 ≤x≤-1",
+        "F": "x≤-3, x≥-2",
+        "G": "-2 ≤x≤-1 i 8&/(6"
       },
       "correctAnswer": "E",
       "workedSolution": "In this question, we consider a function to be increasing when f(x) ≥ 0, and decreasing when f(x) ≤ 0. Commentary: The classification of increasing and decreasing we use in the options for this question avoids a subtle issue: what we consider a function to be doing (i.e., increasing, decreasing, or neither) at points where f(x) = 0. For this question, though, we don’t need to concern ourselves with this as the options all use or . However, we will set out our answer using ‘’ or ‘’. We therefore calculate f(x) and g(x) and find where each is positive and negative. f(x) = 6x+12 = 6(x+2), so f(x) > 0 when x > −2 and f(x) < 0 when x < −2. g(x) = 3x2 +12x+9 = 3(x2 +4x+3). We can find where this is positive and negative by sketching the graph: x2+4x+3 = (x+1)(x+3), giving the sketch of g(x): −3 −1 so g(x) > 0 when x < −3 or x > −1, and g(x) < 0 when −3 < x < −1. We now want one of f(x) and g(x) to be positive and the other negative. We have f(x) > 0 and g(x) < 0 when x > −2 and −3 < x < −1, so when −2 < x < −1. Similarly, f(x) < 0 and g(x) > 0 when x < −2 and either x < −3 or x > −1; together these give x < −3. So the complete set of solutions (if we decide to include the points where f(x) = 0) is x ≤ −3 or −2 ≤ x ≤ −1, and so the answer is option E.",
@@ -2103,7 +2103,7 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 17,
-      "text": "he two functions ܨ() and ܩ() are defined as follows for positive integers ǣ ܨ() = 1 න(-x) x ௡ ଴ ܩ() = ෍ܨ(ݎ) ௡ ௥ୀ¹ hat is the smallest positive integer such that ܩ()൐150 ǫ",
+      "text": "he two functions F(n) and G(n) are defined as follows for positive integers n: F(n)=1 nන(n-x) dx n 0 G(n)=෍F(r) n ௥1 hat is the smallest positive integer n such that G(n)>150 ?",
       "options": {
         "A": "22",
         "B": "23",
@@ -2125,13 +2125,13 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 18,
-      "text": "he graph of y = log¹଴x is translated in the positive yǦdirection by 2 unitsǤ his translation is equivalent to a stretch of factor ݇ parallel to the xǦaxisǤ hat is the value of ݇ǫ",
+      "text": "he graph of y= log10x is translated in the positive y-direction by 2 units. his translation is equivalent to a stretch of factor k parallel to the x-axis. hat is the value of k?",
       "options": {
-        "A": "0Ǥ01",
-        "B": "log¹଴ 2",
-        "C": "0Ǥ5",
+        "A": "0. 01",
+        "B": "log10 2",
+        "C": "0. 5",
         "D": "2",
-        "E": "log² 10",
+        "E": "log2 10",
         "F": "100 i 8&/(6"
       },
       "correctAnswer": "A",
@@ -2148,14 +2148,14 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 19,
-      "text": "he set of solutions to the inequality x²x0 is the interval xr where ǡ ǡ and r are real constants with 0Ǥ n terms of ǡ r and ǡ what is the set of solutions to the inequality x²x³0 ǫ",
+      "text": "he set of solutions to the inequality x2+bx+c<0 is the interval p<x<q where b, c, p and q are real constants with c<0. n terms of p, q and c, what is the set of solutions to the inequality x2+bcx+c3<0 ?",
       "options": {
-        "A": "xr",
-        "B": "r x",
-        "C": "xr",
-        "D": "rx",
-        "E": "²xr²",
-        "F": "r²x² i 8&/(6 >7XUQ RYHU"
+        "A": "p c<x<q c",
+        "B": "q c<x<p c",
+        "C": "pc<x<qc",
+        "D": "qc<x<pc",
+        "E": "pc2<x<qc2",
+        "F": "qc2<x<pc2 i 8&/(6 >7XUQ RYHU"
       },
       "correctAnswer": "D",
       "workedSolution": "We can sketch the graph of y = x2 +bx+c. It intersects the x-axis at p and q, and intersects the y-axis at c < 0. So the graph must look like this: y x p 0 q However, the vertex might be either side of the y-axis. To solve the inequality x2 +bcx+c3 < 0, we need to find where this equals zero. We can use the quadratic formula for this: x2+bcx+c3 = 0 when −bc± (bc)2−4c3 x = = 1(−bc± b2c2−4c3) = 1c(−b± b2−4c) Going back to the original quadratic, we can solve it to find p and q in terms of b and c: p,q = 1(−b± b2−4c) Comparing these, we see that the roots of x2 +bcx+c3 are pc and qc in some order. So the solution is C or D. To distinguish between these possibilities, we need to know which is the larger of pc and qc. Note that we were told that c < 0. Since p < q, it follows that pc > qc, and so the answer is D. It turns out that we didn’t actually need our graph sketch. A somewhat less obvious approach to this question is as follows. We can divide the second inequality by c2 > 0, so x2+bcx+c3 < 0 is equivalent to x2 bx + +c < 0 c2 c or x2 x +b +c < 0 c c Thisisthesameasouroriginalinequality, justwithxreplacedby x, soitssolutionisp < x < q. c c Multiplying this by c < 0 then gives the solution pc > x > qc.",
@@ -2172,13 +2172,13 @@
       "year": "2017",
       "paper": 1,
       "questionNumber": 20,
-      "text": "he lengths of the sides ܴܳǡ ܴܲ and ܲܳ in triangle ܴܲܳ are ǡ and 2 respectivelyǡ where and are positive and such that 3൐2Ǥ hat is the full rangeǡ in degreesǡ of possible values for angle ܴܲܳǫ",
+      "text": "he lengths of the sides QR, RP and PQ in triangle PQR are a, a+d and a+2d respectively, where a and d are positive and such that 3d>2a. hat is the full range, in degrees, of possible values for angle PRQ?",
       "options": {
-        "A": "0 angle ܴܲܳ 60",
-        "B": "0 angle ܴܲܳ 120",
-        "C": "60 angle ܴܲܳ 120",
-        "D": "60 angle ܴܲܳ 180",
-        "E": "120 angle ܴܲܳ 180 i 8&/(6"
+        "A": "0 < angle PRQ < 60",
+        "B": "0 < angle PRQ < 120",
+        "C": "60 < angle PRQ < 120",
+        "D": "60 < angle PRQ < 180",
+        "E": "120 < angle PRQ < 180 i 8&/(6"
       },
       "correctAnswer": "E",
       "workedSolution": "It would be really helpful to sketch this triangle so that we don’t get confused! We will write θ for the angle ∠PRQ. R θ a a+d Q a+2d P It is clear that we want to use the cosine rule to relate the three sides and the angle θ. Using ‘c2 = a2+b2−2abcosC’, we have (a+2d)2 = a2+(a+d)2−2a(a+d)cosθ which we can expand and simplify to give a2+4ad+4d2 = 2a2+2ad+d2−2a(a+d)cosθ Rearranging gives a2−2ad−3d2 cosθ = 2a(a+d) We can simplify this by noticing that the numerator factorises: (a+d)(a−3d) a−3d cosθ = = 2a(a+d) 2a Since 3d > 2a, a−3d < −a, and so cosθ < −a = −1. This gives θ > 120°, and so the answer 2a 2 must be option E. We can go further and show that θ < 180°. Since PQR is a triangle, the length PQ must be less than the sum of PR and RQ, that is a+2d < a+d+a, so d < a. This gives cosθ > −2a = −1 2a so θ < 180°. An alternative approach is to just try values for d. We are given that d > 2a, so we could try d = 2a. This gives side lengths of a, 5a, 7a, which we can take to be 3, 5, 7 if we choose a = 3. 3 3 3 Plugging these lengths into the cosine rule gives θ = 120°, so this is one limit. We are allowed larger values of d. If we take d too large, then we will no longer have a triangle, as PQ > PR+RQ. So as d increases, the angle θ must increase too. Therefore the answer must be E: 120° < θ < 180°.",
@@ -6564,7 +6564,7 @@
       "year": "2022",
       "paper": 1,
       "questionNumber": 1,
-      "text": "How many real solutions are there to the equation 2 cos4 ș – 5 cos2 ș + 3 = 0 in the interval 0  ș  2ʌ ?",
+      "text": "How many real solutions are there to the equation 2 cos4 θ – 5 cos2 θ + 3 = 0 in the interval 0 ≤ θ ≤ 2π ?",
       "options": {
         "A": "",
         "B": "2",
@@ -6878,7 +6878,7 @@
       "year": "2022",
       "paper": 1,
       "questionNumber": 14,
-      "text": "A circle has centre O and radius 6. P, Q and R are points on the circumference with angle POQ  ʌ 2 The area of the triangle POQ is 9 3 What is the greatest possible area of triangle PRQ ?",
+      "text": "A circle has centre O and radius 6. P, Q and R are points on the circumference with angle POQ  π 2 The area of the triangle POQ is 9 3 What is the greatest possible area of triangle PRQ ?",
       "options": {
         "A": "18 + 9 3",
         "B": "18 3",
@@ -6927,7 +6927,7 @@
       "year": "2022",
       "paper": 1,
       "questionNumber": 16,
-      "text": "The solutions to 7 x 4 – 6 x 2 + 1 = 0 are േ cos ș and േ cos ȕ. Which one of the following equations has solutions േ sin ș and േ sin ȕ ?",
+      "text": "The solutions to 7 x 4 – 6 x 2 + 1 = 0 are - cos θ and - cos ȕ. Which one of the following equations has solutions - sin θ and - sin ȕ ?",
       "options": {
         "A": "7 x 4 – 8 x 2 – 5 = 0",
         "B": "7 x 4 – 8 x 2 + 2 = 0",
@@ -6997,14 +6997,14 @@
       "year": "2022",
       "paper": 1,
       "questionNumber": 19,
-      "text": "Circle C1 is defined as x 2 + y 2 = 25 A second circle C2 has radius 4 and centre (a, b) where – 2  a  2 and – 3  b  3 If the centre of C2 is equally likely to be located anywhere within the given range, what is the probability that C2 intersects C1 ?",
+      "text": "Circle C1 is defined as x 2 + y 2 = 25 A second circle C2 has radius 4 and centre (a, b) where – 2 ≤ a ≤ 2 and – 3 ≤ b ≤ 3 If the centre of C2 is equally likely to be located anywhere within the given range, what is the probability that C2 intersects C1 ?",
       "options": {
         "A": "1 25",
         "B": "9 25",
         "C": "16 25",
-        "D": "6 – ʌ 6",
-        "E": "16 – ʌ 24",
-        "F": "24 – ʌ"
+        "D": "6 – π 6",
+        "E": "16 – π 24",
+        "F": "24 – π"
       },
       "correctAnswer": "F",
       "workedSolution": "Note first that the region where the centre of C may lie is entirely within the circle C , as 2 1 22+32 = 13 < 25. As the radius of C is 5, the circle C will intersect C if and only if the centre of C is at least 1 2 1 2 a distance of 1 from the origin (the centre of C ). This is because in this case, a line from the centre of C passing through the centre of C will reach the circle C before (or as) it reaches 1 2 1 the circle C , but a line from the centre of C in the opposite direction will reach C first. If, 2 1 2 though, the centre of C is at a distance of less than 1 from the origin, the furthest point on C 2 2 from the origin will be at a distance of less than 1+4 = 5 from the origin, so C lies entirely inside C . The area of the allowed (a,b) region is 4×6 = 24. The (a,b) region where the circles do not intersect is a circle of radius 1, with area π, lying entirely within the allowed region, so the region where the circles do intersect has area 24−π. 24−π Thus the probability of intersection is , which is option F.",
@@ -7239,9 +7239,9 @@
         "A": "no real numbers",
         "B": "k > 0",
         "C": "k < 1",
-        "D": "k  1",
+        "D": "k ≤ 1",
         "E": "0 < k < 1",
-        "F": "0 < k  1",
+        "F": "0 < k ≤ 1",
         "G": "all real numbers"
       },
       "correctAnswer": "A",
@@ -7403,7 +7403,7 @@
       "year": "2022",
       "paper": 2,
       "questionNumber": 16,
-      "text": "In this question, a1, …, a 100 and b1, …, b 100 and c1, …, c 100 are three sequences of integers such that a n  b n + c n for each n. Which of the following statements must be true? I (minimum of a1, …, a 100 )  (minimum of b1, …, b 100 ) + (minimum of c1, …, c 100 ) II (minimum of a1, …, a 100 )  (minimum of b1, …, b 100 ) + (minimum of c1, …, c 100 ) III (maximum of a1, …, a 100 )  (maximum of b1, …, b 100 ) + (maximum of c1, …, c 100 )",
+      "text": "In this question, a1, …, a 100 and b1, …, b 100 and c1, …, c 100 are three sequences of integers such that a n ≤ b n + c n for each n. Which of the following statements must be true? I (minimum of a1, …, a 100 ) ≤ (minimum of b1, …, b 100 ) + (minimum of c1, …, c 100 ) II (minimum of a1, …, a 100 )  (minimum of b1, …, b 100 ) + (minimum of c1, …, c 100 ) III (maximum of a1, …, a 100 ) ≤ (maximum of b1, …, b 100 ) + (maximum of c1, …, c 100 )",
       "options": {
         "A": "none of them",
         "B": "I only",
@@ -7453,7 +7453,7 @@
       "year": "2022",
       "paper": 2,
       "questionNumber": 18,
-      "text": "P, Q, R and S show the graphs of y = (cos x) cos x, y = (sin x) sin x, y = (cos x) sin x and y = (sin x) cos x for 0 < x < ʌ 2 in some order. P 0 6 π 0.5 1 3 π 2 π Q 0 6 π 0.5 1 3 π 2 π R 0 6 π 0.5 1 3 π 2 π S 0 6 π 0.5 1 3 π 2 π Which row in the following table correctly identifies the graphs? y = (cos x) cos x y = (sin x) sin x y = (cos x) sin x y = (sin x) cos x",
+      "text": "P, Q, R and S show the graphs of y = (cos x) cos x, y = (sin x) sin x, y = (cos x) sin x and y = (sin x) cos x for 0 < x < π 2 in some order. P 0 6 π 0.5 1 3 π 2 π Q 0 6 π 0.5 1 3 π 2 π R 0 6 π 0.5 1 3 π 2 π S 0 6 π 0.5 1 3 π 2 π Which row in the following table correctly identifies the graphs? y = (cos x) cos x y = (sin x) sin x y = (cos x) sin x y = (sin x) cos x",
       "options": {
         "A": "P Q R S",
         "B": "P Q S R",
@@ -8431,7 +8431,7 @@
         "F": "2100 – 2"
       },
       "correctAnswer": "F",
-      "workedSolution": "The value of 2x changes at every integer. We have  20 when x = 0     21 when 0 < x ≤ 1    22 when 1 < x ≤ 2 2x = 23 when 2 < x ≤ 3     ...    299 when 98 < x ≤ 99 We therefore break the integral up into unit intervals. The value of 2x at the endpoints does not influence the value of the integral, so we have 99 1 2 3 99 2xdx = 2xdx+ 2xdx+ 2xdx+···+ 2xdx 0 0 1 2 98 1 2 3 99 = 21dx+ 22dx+ 23dx+···+ 299dx 0 1 2 98 = 21+22+23+···+299 as the integral of a constant is just the constant times the interval width. We now have a geometric series with first term a = 2, common ratio r = 2 and n = 99 terms, so the sum is a(rn−1) 21(299−1) = = 2100−2 r−1 2−1 which is option F.",
+      "workedSolution": "The value of 2x changes at every integer. We have  20 when x = 0 21 when 0 < x ≤ 1 22 when 1 < x ≤ 2 2x = 23 when 2 < x ≤ 3 ... 299 when 98 < x ≤ 99 We therefore break the integral up into unit intervals. The value of 2x at the endpoints does not influence the value of the integral, so we have 99 1 2 3 99 2xdx = 2xdx+ 2xdx+ 2xdx+···+ 2xdx 0 0 1 2 98 1 2 3 99 = 21dx+ 22dx+ 23dx+···+ 299dx 0 1 2 98 = 21+22+23+···+299 as the integral of a constant is just the constant times the interval width. We now have a geometric series with first term a = 2, common ratio r = 2 and n = 99 terms, so the sum is a(rn−1) 21(299−1) = = 2100−2 r−1 2−1 which is option F.",
       "topics": [
         "calculus",
         "number-theory"

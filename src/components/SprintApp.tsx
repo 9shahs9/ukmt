@@ -13,9 +13,6 @@ import {
 } from "@/lib/local-progress";
 import {
   isFirebaseConfigured,
-  signInWithEmail,
-  signInWithGoogle,
-  signOutUser,
   subscribeToAuth,
 } from "@/lib/firebase";
 import { generateForConcept } from "@/lib/question-generator";
@@ -53,13 +50,9 @@ function topicFromConcept(concept: string): number {
 }
 
 export function SprintApp() {
-  /* ───── Auth state ───── */
   const [tab, setTab] = useState<AppTab>("dashboard");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [userId, setUserId] = useState<string | null>(null);
   const [displayName, setDisplayName] = useState("Student");
-  const [authMessage, setAuthMessage] = useState("");
 
   /* ───── Data ───── */
   const [questions, setQuestions] = useState<PracticeQuestion[]>([]);
@@ -162,7 +155,17 @@ export function SprintApp() {
   }, [progress.totalCorrect, progress.totalQuestionsAttempted]);
 
   const videoEmbed = useMemo(() => {
-    if (playlistUrl.includes("youtube.com") || playlistUrl.includes("youtu.be")) return playlistUrl;
+    try {
+      const parsed = new URL(playlistUrl);
+      if (
+        parsed.protocol === "https:" &&
+        (parsed.hostname === "www.youtube.com" ||
+          parsed.hostname === "youtube.com" ||
+          parsed.hostname === "youtu.be")
+      ) {
+        return playlistUrl;
+      }
+    } catch { /* invalid URL — fall through */ }
     return `https://www.youtube.com/results?search_query=${encodeURIComponent(activeConcept.suggestedVideoQuery)}`;
   }, [activeConcept.suggestedVideoQuery, playlistUrl]);
 
@@ -187,55 +190,6 @@ export function SprintApp() {
     const next = conceptSheets[idx + 1] ?? conceptSheets[0];
     return `Great work on "${last}" (${acc ?? "?"}%). Today try "${next.concept}" \u2014 read the fact sheet first, then launch a sprint.`;
   }, [userId, progress.lastConcept, progress.accuracyByConcept]);
-
-  /* ───── Auth handlers ───── */
-  async function handleLogin() {
-    if (!email || !password) { setAuthMessage("Enter both email and password."); return; }
-
-    if (isFirebaseConfigured) {
-      try {
-        const user = await signInWithEmail(email, password);
-        setUserId(user.uid);
-        setDisplayName(user.displayName ?? user.email?.split("@")[0] ?? "Student");
-        setAuthMessage("");
-        const p = await loadProgress(user.uid);
-        setProgress(p);
-      } catch (err: unknown) {
-        setAuthMessage(err instanceof Error ? err.message : "Login failed.");
-      }
-    } else {
-      // Local-only mode: use email as ID
-      const id = email.trim().toLowerCase();
-      const name = id.split("@")[0];
-      window.localStorage.setItem("ukmt-user", JSON.stringify({ id, name }));
-      setUserId(id);
-      setDisplayName(name);
-      setAuthMessage("");
-      const p = await loadProgress(id);
-      setProgress(p);
-    }
-  }
-
-  async function handleGoogleLogin() {
-    try {
-      const user = await signInWithGoogle();
-      setUserId(user.uid);
-      setDisplayName(user.displayName ?? user.email?.split("@")[0] ?? "Student");
-      setAuthMessage("");
-      const p = await loadProgress(user.uid);
-      setProgress(p);
-    } catch (err: unknown) {
-      setAuthMessage(err instanceof Error ? err.message : "Google sign-in failed.");
-    }
-  }
-
-  async function handleSignOut() {
-    if (isFirebaseConfigured) await signOutUser();
-    window.localStorage.removeItem("ukmt-user");
-    setUserId(null);
-    setDisplayName("Student");
-    setProgress(defaultProgress("guest"));
-  }
 
   /* ───── Sprint builder: concept-focused, fully generated ───── */
   const buildSprint = useCallback(() => {
@@ -292,26 +246,20 @@ export function SprintApp() {
         </div>
       </header>
 
-      {/* Auth */}
-      <section className="auth-card">
-        {!userId ? (
-          <>
-            <h2>Login</h2>
-            <div className="auth-grid">
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-              <button onClick={handleLogin}>Login / Sign Up</button>
-              {isFirebaseConfigured && <button className="secondary" onClick={handleGoogleLogin}>Sign in with Google</button>}
-            </div>
-            {authMessage && <p className="error-msg">{authMessage}</p>}
-          </>
-        ) : (
+      {/* User display */}
+      {userId && (
+        <section className="auth-card">
           <div className="signed-in">
             <p>Signed in as <strong>{displayName}</strong></p>
-            <button className="secondary" onClick={handleSignOut}>Sign out</button>
+            <Link href="/" className="secondary" style={{ textDecoration: "none" }}>Switch track / Sign out</Link>
           </div>
-        )}
-      </section>
+        </section>
+      )}
+      {!userId && (
+        <section className="auth-card">
+          <p className="muted"><Link href="/" style={{ fontWeight: 600 }}>← Sign in on the Hub page</Link> to save your progress.</p>
+        </section>
+      )}
 
       {/* Guided session banner */}
       {guidedMessage && userId && (
