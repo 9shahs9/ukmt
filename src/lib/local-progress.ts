@@ -17,21 +17,34 @@ export const defaultProgress = (userId: string): UserProgress => ({
   sprintHistory: [],
 });
 
-/** Load progress: Firestore first, fall back to localStorage */
+/** Load progress: Firestore first, fall back to localStorage.
+ *  If Firestore is empty but localStorage has data, migrate it up. */
 export async function loadProgress(userId: string): Promise<UserProgress> {
   if (typeof window === "undefined") return defaultProgress(userId);
 
   if (isFirebaseConfigured) {
     try {
       const cloud = await loadCloudProgress(userId);
-      if (cloud) return { ...defaultProgress(userId), ...cloud };
+      if (cloud) {
+        // Cloud data exists — use it and sync to localStorage
+        const merged = { ...defaultProgress(userId), ...cloud };
+        window.localStorage.setItem(`${STORAGE_KEY}:${userId}`, JSON.stringify(merged));
+        return merged;
+      }
     } catch (err) { console.error("[UKMT] Firestore load failed:", err); }
   }
 
+  // Fall back to localStorage
   const raw = window.localStorage.getItem(`${STORAGE_KEY}:${userId}`);
   if (!raw) return defaultProgress(userId);
   try {
-    return { ...defaultProgress(userId), ...JSON.parse(raw) as UserProgress };
+    const local = { ...defaultProgress(userId), ...JSON.parse(raw) as UserProgress };
+    // Migrate localStorage data to Firestore if available
+    if (isFirebaseConfigured && local.totalQuestionsAttempted > 0) {
+      saveCloudProgress(local).then(() => console.log("[UKMT] Migrated localStorage progress to Firestore"))
+        .catch((err) => console.error("[UKMT] Migration to Firestore failed:", err));
+    }
+    return local;
   } catch {
     return defaultProgress(userId);
   }

@@ -17,20 +17,31 @@ export function defaultTMUAProgress(userId: string): TMUAProgress {
   };
 }
 
+/** Load progress: Firestore first, fall back to localStorage.
+ *  If Firestore is empty but localStorage has data, migrate it up. */
 export async function loadTMUAProgress(userId: string): Promise<TMUAProgress> {
   if (typeof window === "undefined") return defaultTMUAProgress(userId);
 
   if (isFirebaseConfigured) {
     try {
       const cloud = await loadCloudTMUAProgress(userId);
-      if (cloud) return { ...defaultTMUAProgress(userId), ...cloud };
+      if (cloud) {
+        const merged = { ...defaultTMUAProgress(userId), ...cloud };
+        window.localStorage.setItem(`${STORAGE_KEY}:${userId}`, JSON.stringify(merged));
+        return merged;
+      }
     } catch (err) { console.error("[TMUA] Firestore load failed:", err); }
   }
 
   const raw = window.localStorage.getItem(`${STORAGE_KEY}:${userId}`);
   if (!raw) return defaultTMUAProgress(userId);
   try {
-    return { ...defaultTMUAProgress(userId), ...JSON.parse(raw) as TMUAProgress };
+    const local = { ...defaultTMUAProgress(userId), ...JSON.parse(raw) as TMUAProgress };
+    if (isFirebaseConfigured && local.totalAttempted > 0) {
+      saveCloudTMUAProgress(local).then(() => console.log("[TMUA] Migrated localStorage progress to Firestore"))
+        .catch((err) => console.error("[TMUA] Migration to Firestore failed:", err));
+    }
+    return local;
   } catch {
     return defaultTMUAProgress(userId);
   }
