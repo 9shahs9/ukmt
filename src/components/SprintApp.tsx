@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { conceptSheets, topicPlan } from "@/data/mastery-plan";
 import {
@@ -280,6 +281,7 @@ export function SprintApp() {
           <p className="kicker">UKMT Mastery</p>
           <h1>The 20-Minute Sprint</h1>
           <p className="subtitle">You gain more marks by doing one question carefully than by guessing.</p>
+          <Link href="/" className="btn-secondary-link" style={{ marginTop: ".5rem", display: "inline-block" }}>← Back to Hub</Link>
         </div>
         <div className="timer-box">
           <p>Sprint Timer</p>

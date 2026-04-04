@@ -16,8 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "UKMT Mastery: The 20-Minute Sprint",
-  description: "JMC, Junior Kangaroo, and JMO mastery trainer with sprint practice and extended solutions.",
+  title: "Maths Mastery Hub — UKMT & TMUA Training",
+  description: "UKMT competition prep and TMUA Cambridge admissions test trainer with past papers, timed exams, and worked solutions.",
 };
 
 export default function RootLayout({

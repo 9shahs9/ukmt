@@ -14,6 +14,7 @@ import {
 import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 
 import type { UserProgress } from "@/lib/types";
+import type { TMUAProgress } from "@/lib/tmua-types";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -75,4 +76,16 @@ export async function loadCloudProgress(userId: string): Promise<UserProgress | 
 export async function saveCloudProgress(progress: UserProgress): Promise<void> {
   if (!db) return;
   await setDoc(doc(db, "progress", progress.userId), progress, { merge: true });
+}
+
+export async function loadCloudTMUAProgress(userId: string): Promise<TMUAProgress | null> {
+  if (!db) return null;
+  const snap = await getDoc(doc(db, "tmua-progress", userId));
+  if (!snap.exists()) return null;
+  return snap.data() as TMUAProgress;
+}
+
+export async function saveCloudTMUAProgress(progress: TMUAProgress): Promise<void> {
+  if (!db) return;
+  await setDoc(doc(db, "tmua-progress", progress.userId), progress, { merge: true });
 }
