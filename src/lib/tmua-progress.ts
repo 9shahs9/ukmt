@@ -24,7 +24,7 @@ export async function loadTMUAProgress(userId: string): Promise<TMUAProgress> {
     try {
       const cloud = await loadCloudTMUAProgress(userId);
       if (cloud) return { ...defaultTMUAProgress(userId), ...cloud };
-    } catch { /* fall through */ }
+    } catch (err) { console.error("[TMUA] Firestore load failed:", err); }
   }
 
   const raw = window.localStorage.getItem(`${STORAGE_KEY}:${userId}`);
@@ -41,7 +41,7 @@ export async function saveTMUAProgress(progress: TMUAProgress): Promise<void> {
   window.localStorage.setItem(`${STORAGE_KEY}:${progress.userId}`, JSON.stringify(progress));
 
   if (isFirebaseConfigured) {
-    try { await saveCloudTMUAProgress(progress); } catch { /* silent */ }
+    try { await saveCloudTMUAProgress(progress); } catch (err) { console.error("[TMUA] Firestore save failed:", err); }
   }
 }
 

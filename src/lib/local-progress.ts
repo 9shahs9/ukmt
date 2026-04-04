@@ -25,7 +25,7 @@ export async function loadProgress(userId: string): Promise<UserProgress> {
     try {
       const cloud = await loadCloudProgress(userId);
       if (cloud) return { ...defaultProgress(userId), ...cloud };
-    } catch { /* fall through */ }
+    } catch (err) { console.error("[UKMT] Firestore load failed:", err); }
   }
 
   const raw = window.localStorage.getItem(`${STORAGE_KEY}:${userId}`);
@@ -43,7 +43,7 @@ export async function saveProgress(progress: UserProgress): Promise<void> {
   window.localStorage.setItem(`${STORAGE_KEY}:${progress.userId}`, JSON.stringify(progress));
 
   if (isFirebaseConfigured) {
-    try { await saveCloudProgress(progress); } catch { /* silent */ }
+    try { await saveCloudProgress(progress); } catch (err) { console.error("[UKMT] Firestore save failed:", err); }
   }
 }
 
