@@ -3,226 +3,312 @@
  * Clean TMUA question bank from PDF-extraction Unicode artifacts
  * and normalize to the app's format.
  *
- * Usage: node scripts/clean-tmua-questions.mjs <input.json> <output.json>
+ * Two-phase approach:
+ *   Phase 1: Simple character replacement (Syriac→letters, Malayalam→operators, etc.)
+ *   Phase 2: Context-aware math formatting using temporary placeholders
+ *            for superscript/subscript blocks (Odia, Tamil, Telugu, Kannada)
+ *
+ * Usage: node scripts/clean-tmua-questions.mjs [input.json] [output.json]
  */
 
 import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 
-const inputPath = process.argv[2] || resolve("../Downloads/TMUA_Trainer/question-bank.json");
+const inputPath = process.argv[2] || resolve("/Users/sb/Downloads/TMUA_Trainer/question-bank.json");
 const outputPath = process.argv[3] || resolve("public/data/tmua-questions.json");
 
 const raw = JSON.parse(readFileSync(inputPath, "utf-8"));
 
-/** ────────── PDF-extracted Unicode artifacts → intended characters ──────────
- *
- * The TMUA question bank was extracted from PDFs that used custom math fonts.
- * The extraction tool mapped glyph indices to wrong Unicode code points
- * (Syriac, Odia, Tamil, Malayalam, Telugu, Kannada, Ethiopic, Latin Extended-B).
- *
- * Two systematic offsets were discovered for the Syriac block:
- *   • Uppercase A-Z: codepoint − 1762 = ASCII value
- *   • Lowercase a-z: codepoint − 1756 = ASCII value
- *
- * Other blocks are mapped individually from contextual analysis.
- */
+/* ═════════════════════════════════════════════════════════════════════════════
+ * PHASE 1 — Simple character map (non-math blocks)
+ * ═════════════════════════════════════════════════════════════════════════════ */
 const CHAR_MAP = {
   // ──── Syriac block → Latin uppercase (offset 1762) ────
-  "\u0720": ">",       // ܠ → > (symbol)
-  "\u0723": "A",       // ܣ → A (geometry label)
-  "\u0724": "B",       // ܤ → B
-  "\u0725": "C",       // ܥ → C
-  "\u0726": "D",       // ܦ → D
-  "\u0727": "E",       // ܧ → E
-  "\u0728": "F",       // ܨ → F
-  "\u0729": "G",       // ܩ → G
-  "\u072A": "H",       // ܪ → H
-  "\u072B": "I",       // ܫ → I
-  "\u072C": "J",       // ܬ → J
-  "\u072D": "K",       // ­ → K
-  "\u072E": "L",       // ® → L
-  "\u072F": "M",       // ܯ → M
-  "\u0730": "N",       // ܰ → N
-  "\u0731": "O",       // ܱ → O (pyramid vertex)
-  "\u0732": "P",       // ܲ → P (point label)
-  "\u0733": "Q",       // ܳ → Q
-  "\u0734": "R",       // ܴ → R
-  "\u0735": "S",       // ܵ → S (set label)
-  "\u0736": "T",       // ܶ → T
-  "\u0737": "U",       // ܷ → U
-  "\u0738": "V",       // ܸ → V
-  "\u0739": "W",       // ܹ → W
-  "\u073A": "X",       // ܺ → X (triangle XYZ)
-  "\u073B": "Y",       // ܻ → Y
-  "\u073C": "Z",       // ܼ → Z
+  "\u0720": ">",
+  "\u0723": "A", "\u0724": "B", "\u0725": "C", "\u0726": "D", "\u0727": "E",
+  "\u0728": "F", "\u0729": "G", "\u072A": "H", "\u072B": "I", "\u072C": "J",
+  "\u072D": "K", "\u072E": "L", "\u072F": "M", "\u0730": "N", "\u0731": "O",
+  "\u0732": "P", "\u0733": "Q", "\u0734": "R", "\u0735": "S", "\u0736": "T",
+  "\u0737": "U", "\u0738": "V", "\u0739": "W", "\u073A": "X", "\u073B": "Y",
+  "\u073C": "Z",
 
   // ──── Syriac block → Latin lowercase (offset 1756) ────
-  "\u073D": "a",       // ܽ → a (variable) — was WRONGLY removed!
-  "\u073E": "b",       // ܾ → b — was WRONGLY removed!
-  "\u073F": "c",       // ܿ → c — was WRONGLY removed!
-  "\u0740": "d",       // ݀ → d — was WRONGLY removed!
-  "\u0741": "e",       // ݁ → e
-  "\u0742": "f",       // ݂ → f — was WRONGLY removed!
-  "\u0743": "g",       // ݃ → g
-  "\u0744": "h",       // ݄ → h
-  "\u0745": "i",       // ݅ → i
-  "\u0746": "j",       // ݆ → j
-  "\u0747": "k",       // ݇ → k
-  "\u0748": "l",       // ݈ → l
-  "\u0749": "m",       // ݉ → m — was WRONGLY removed!
-  "\u074A": "n",       // ݊ → n — was WRONGLY removed!
-  "\u074B": "o",       // ݋ → o
-  "\u074C": "p",       // ݌ → p — was WRONGLY removed!
-  "\u074D": "q",       // ݍ → q — was WRONGLY mapped to r!
-  "\u074E": "r",       // ݎ → r
-  "\u074F": "s",       // ݏ → s
-  "\u0750": "t",       // ݐ → t
-  "\u0751": "u",       // ݑ → u
-  "\u0752": "v",       // ݒ → v
-  "\u0753": "w",       // ݓ → w
-  "\u0754": "x",       // ݔ → x
-  "\u0755": "y",       // ݕ → y
-  "\u0756": "z",       // ݖ → z
+  "\u073D": "a", "\u073E": "b", "\u073F": "c", "\u0740": "d", "\u0741": "e",
+  "\u0742": "f", "\u0743": "g", "\u0744": "h", "\u0745": "i", "\u0746": "j",
+  "\u0747": "k", "\u0748": "l", "\u0749": "m", "\u074A": "n", "\u074B": "o",
+  "\u074C": "p", "\u074D": "q", "\u074E": "r", "\u074F": "s", "\u0750": "t",
+  "\u0751": "u", "\u0752": "v", "\u0753": "w", "\u0754": "x", "\u0755": "y",
+  "\u0756": "z",
 
-  // ──── Malayalam block ────
-  "\u0D45": "+",       // ൅ → + (addition) — was WRONGLY removed!
-  "\u0D46": "-",       // െ → - (subtraction)
-  "\u0D4C": "=",       // ൌ → =
-  "\u0D4F": "<",       // ൏ → < — was WRONGLY removed!
-  "\u0D50": ">",       // ൐ → >
-  "\u0D51": "≤",       // ൑ → ≤
-  "\u0D52": "≥",       // ൒ → ≥
-  "\u0D6B": "(",       // ൫ → ( (parenthesis, Malayalam digit 5)
-  "\u0D6F": ")",       // ൯ → ) (parenthesis, Malayalam digit 9)
+  // ──── Additional Syriac (different font encoding) ────
+  "\u0709": "A", "\u0716": "T", "\u070C": "D",
 
-  // ──── Odia block — superscript digits & operators ────
-  "\u0B34": "0",       // ଴ → 0
-  "\u0B35": "1",       // ଵ → 1
-  "\u0B36": "2",       // ଶ → 2
-  "\u0B37": "3",       // ଷ → 3
-  "\u0B38": "4",       // ସ → 4
-  "\u0B39": "5",       // ହ → 5
-  "\u0B3A": "6",       // ଺ → 6
-  "\u0B3B": "7",       // ଻ → 7
-  "\u0B3C": "8",       // ଼ → 8
-  "\u0B3D": "9",       // ଽ → 9
-  "\u0B3E": "+",       // ା → + (subscript/superscript plus)
-  "\u0B3F": "-",       // ି → - (subscript minus) — was WRONGLY removed!
-
-  // ──── Tamil block — subscript letters ────
-  "\u0BD4": "a",       // ௔ → subscript a (e.g. log_a)
-  "\u0BD5": "b",       // ௕ → subscript b
-  "\u0BD6": "c",       // ௖ → subscript c
-  "\u0BE1": "n",       // ௡ → subscript n (e.g. a_n, S_n)
-  "\u0BEB": "x",       // ௫ → subscript x — was WRONGLY mapped to 5!
-  "\u0BEC": "y",       // ௬ → subscript y (e.g. b^{xy})
-
-  // ──── Telugu block — superscript digits & operators ────
-  "\u0C2C": "0",       // బ → 0
-  "\u0C2D": "1",       // భ → 1
-  "\u0C2E": "2",       // మ → 2
-  "\u0C2F": "3",       // య → 3
-  "\u0C30": "",        // ర → (formatting artifact, remove)
-  "\u0C36": "+",       // శ → + (superscript plus in exponents)
-  "\u0C37": "-",       // ష → - (superscript minus in exponents)
-
-  // ──── Kannada block — superscript variables ────
-  "\u0C8E": "n",       // ೎ → n (exponent variable)
-  "\u0C8F": "m",       // ೏ → m (exponent variable)
-  "\u0CE3": "x",       // ೣ → x (exponent variable)
+  // ──── Malayalam block — operators & brackets ────
+  "\u0D45": "+", "\u0D46": "-", "\u0D47": "-", "\u0D48": "\u00D7",
+  "\u0D4C": "=", "\u0D4D": "\u2260",
+  "\u0D4E": "\u2248", "\u0D4F": "<", "\u0D50": ">", "\u0D51": "\u2264", "\u0D52": "\u2265",
+  "\u0D6B": "(", "\u0D6F": ")", "\u0D6C": "(", "\u0D70": ")",
 
   // ──── Ethiopic block — brackets ────
-  "\u123A": "(",       // ሺ → (
-  "\u123B": ")",       // ሻ → )
-  "\u123E": "[",       // ሾ → [
-  "\u123F": "]",       // ሿ → ]
-  "\u1240": "(",       // ቀ → ( (large parenthesis)
-  "\u1241": ")",       // ቁ → )
+  "\u123A": "(", "\u123B": ")", "\u123E": "[", "\u123F": "]",
+  "\u1240": "(", "\u1241": ")",
 
   // ──── Latin Extended-B — punctuation & operators ────
-  "\u01E1": ",",       // ǡ → , (comma)
-  "\u01E3": ":",       // ǣ → : (colon, ratio notation)
-  "\u01E4": ". ",      // Ǥ → . (period + space; consumes next capital letter)
-  "\u01E6": "-",       // Ǧ → - (hyphen, e.g. x-axis)
-  "\u01EB": "?",       // ǫ → ? (question mark)
-  "\u0217": "*",       // ȗ → * (statement label)
+  "\u01E1": ",", "\u01E2": ";", "\u01E3": ":", "\u01E4": ". ",
+  "\u01E6": "-", "\u01EB": "?", "\u01EE": "\u2018", "\u01EF": "\u2019",
+  "\u0200": "/", "\u0202": "\u2212",
+  "\u0215": "\u03B2", "\u0217": "*",
 
-  // ──── NKo block ────
-  "\u07E8": "π",       // ߨ → π (pi)
+  // ──── NKo block — Greek letters ────
+  "\u07E8": "\u03C0", "\u07E0": "\u03B8",
+
+  // ──── Cyrillic / Hangul — prime marks ────
+  "\u0522": "\u2032",   // Ԣ → ′ (prime)
+  "\u11F1": "\u2032",   // ᇱ → ′
+
+  // ──── Sinhala — math operators ────
+  "\u0DA7": "\u221A", "\u0DA5": "\u221A",  // √
+  "\u0DB1": "\u222B",                        // ∫
+  "\u0DCD": "\u03A3",                        // Σ
+
+  // ──── Greek reinterpretations (context-specific) ────
+  "\u03A8": "%",    // Ψ → %
+  // NOTE: ι (U+03B9) NOT globally replaced — it's theta iota in some contexts
+  // We handle degree-context separately below
+
+  // ──── Gujarati digits (used as labels) ────
+  "\u0ADA": "(1)", "\u0ADB": "(2)", "\u0ADC": "(3)",
+
+  // ──── Hebrew ────
+  "\u05E1": "\u2220",  // ס → ∠
+  "\u05EC": "\u222B",  // ׬ → ∫
 
   // ──── Miscellaneous ────
-  "\u0094": "≤",       // control char → ≤
-  "\uF8F4": " ",       // private use → space
-  "\u2217": "*",       // ∗ → *
-  "\u25E6": "°",       // ◦ → degree
-  "\u0C17": "",        // గ → (unclear, remove; only 1 occurrence)
+  "\u0094": "\u2264", "\u0095": "\u2265", "\u0087": "",
+  "\u2217": "\u00D7", "\u25E6": "\u00B0",
+  "\u0219": "\u03B8", "\u028C": "\u03C0",
+  "\u02C6": "^",
+  "\u2010": "-",
+  "\u018E": "\u2032",  // Ǝ → ′
+  "\u0C17": "", "\u0C30": "",  // formatting artifacts, remove
+  "\uF8F4": " ", "\uF8F1": " ", "\uF8F2": " ", "\uF8F3": " ",
+  "\uF0A7": ":",
+  "\u00A7": "", "\u00A8": "", "\u00B8": "", "\u00A9": "", "\u00B9": "",
 
-  // ──── Additional low-frequency fixes ────
-  "\u0B6A": "4",       // ୪ → 4 (Odia digit 4)
-  "\u0B6D": "7",       // ୭ → 7 (Odia digit 7)
-  "\u0B65": "0",       // Odia → 0
-  "\u07E0": "θ",       // ߠ → θ (theta from NKo block)
-  "\u0219": "θ",       // ș → θ (garbled theta)
-  "\u028C": "π",       // ʌ → π (garbled pi)
-  "\u05E1": "∠",       // ס → ∠ (Hebrew → angle sign)
-  "\u0D47": "-",       // േ → - (Malayalam vowel sign)
-  "\u0D48": "×",       // ൈ → × (Malayalam)
-  "\u01EE": "'",       // Ǯ → ' (single quote)
-  "\u01EF": "'",       // ǯ → ' (single quote)
-  "\u0709": "A",       // ܉ → A (Syriac, different font encoding)
-  "\u0716": "T",       // ܖ → T
-  "\u070C": "D",       // ܌ → D
-  "\u0D4D": "",        // ് → (Malayalam virama, remove)
-  "\u0B40": "",        // ୀ → (Odia vowel sign, remove)
+  // ──── Odia extended digits (these appear outside math contexts) ────
+  "\u0B6A": "4", "\u0B6D": "7", "\u0B65": "0", "\u0B40": "",
 };
 
-/**
- * After Ǥ → ". " replacement, the first letter of the next word is consumed.
- * Fix common broken sentence starts: ". hich" → ". Which", ". he " → ". The ", etc.
- */
-const SENTENCE_FIXES = [
-  [/\. hat is/g, ". What is"],
-  [/\. hat are/g, ". What are"],
-  [/\. hat can/g, ". What can"],
-  [/\. hich/g, ". Which"],
-  [/\. onsider/g, ". Consider"],
-  [/\. uppose/g, ". Suppose"],
-  [/\. herefore/g, ". Therefore"],
-  [/\. xpress/g, ". Express"],
-  [/\. omplete/g, ". Complete"],
-  [/\. implify/g, ". Simplify"],
-  [/\. ind /g, ". Find "],
-  [/\. he /g, ". The "],
-  [/\. his /g, ". This "],
-  [/\. ll /g, ". All "],
-  [/\. et /g, ". Let "],
-  [/\. ence/g, ". Hence"],
-  [/\. ote /g, ". Note "],
-  [/\. ow many/g, ". How many"],
-  [/\. ow,/g, ". Now,"],
-  [/\. se /g, ". Use "],
-  [/\. olve/g, ". Solve"],
-  [/\. f /g, ". If "],
-  [/\. o /g, ". So "],
-  [/\. iven/g, ". Given"],
-  [/\. ondition/g, ". Condition"],
-  [/\. tate/g, ". State"],
-  [/\. ence/g, ". Hence"],
+
+/* ═════════════════════════════════════════════════════════════════════════════
+ * PHASE 2 — Math-aware replacement using temporary placeholders
+ *
+ * PDF extraction uses different Unicode blocks for superscript vs subscript
+ * glyphs. We replace them with PUA placeholders first, then resolve based
+ * on surrounding context:
+ *   - After a letter or ')': superscript  (x²)
+ *   - After "log" or "ln":  subscript     (log₁₀)
+ *   - Otherwise:            plain digit   (fraction 1/2, number 10)
+ * ═════════════════════════════════════════════════════════════════════════════ */
+
+// Superscript source chars → PUA placeholders (U+E000 – U+E011)
+const SUP_PH = {
+  // Odia superscript digits
+  "\u0B34": "\uE000", "\u0B35": "\uE001", "\u0B36": "\uE002", "\u0B37": "\uE003",
+  "\u0B38": "\uE004", "\u0B39": "\uE005", "\u0B3A": "\uE006", "\u0B3B": "\uE007",
+  "\u0B3C": "\uE008", "\u0B3D": "\uE009",
+  "\u0B3E": "\uE00A", "\u0B3F": "\uE00B",  // + and -
+  // Telugu superscript digits
+  "\u0C2C": "\uE000", "\u0C2D": "\uE001", "\u0C2E": "\uE002", "\u0C2F": "\uE003",
+  "\u0C36": "\uE00A", "\u0C37": "\uE00B",
+  // Kannada / Telugu superscript variables
+  "\u0C8E": "\uE00C", "\u0C8F": "\uE00D", "\u0CE3": "\uE00E",
+  "\u0CCE": "\uE00F", "\u0CCF": "\uE010", "\u0CD9": "\uE011",
+};
+
+// Subscript source chars → PUA placeholders (U+E020 – U+E028)
+const SUB_PH = {
+  "\u0BD4": "\uE020", // Tamil ௔ → sub a
+  "\u0BD5": "\uE021", // Tamil ௕ → sub b
+  "\u0BD6": "\uE022", // Tamil ௖ → sub c
+  "\u0BE1": "\uE023", // Tamil ௡ → sub n
+  "\u0BEB": "\uE024", // Tamil ௫ → sub x
+  "\u0BEC": "\uE025", // Tamil ௬ → sub y
+  "\u0BD7": "\uE026", // Tamil ௗ → sub d (dy/dx)
+  "\u0BE3": "\uE027", // Tamil ௣ → sub p
+  "\u0BE5": "\uE028", // Tamil ௥ → sub r
+};
+
+// Placeholder → plain character
+const PH_PLAIN = {
+  "\uE000": "0", "\uE001": "1", "\uE002": "2", "\uE003": "3",
+  "\uE004": "4", "\uE005": "5", "\uE006": "6", "\uE007": "7",
+  "\uE008": "8", "\uE009": "9", "\uE00A": "+", "\uE00B": "-",
+  "\uE00C": "n", "\uE00D": "m", "\uE00E": "x",
+  "\uE00F": "c", "\uE010": "d", "\uE011": "n",
+  "\uE020": "a", "\uE021": "b", "\uE022": "c",
+  "\uE023": "n", "\uE024": "x", "\uE025": "y",
+  "\uE026": "d", "\uE027": "p", "\uE028": "r",
+};
+
+// Unicode superscript lookup
+const TO_SUP = {
+  "0": "\u2070", "1": "\u00B9", "2": "\u00B2", "3": "\u00B3", "4": "\u2074",
+  "5": "\u2075", "6": "\u2076", "7": "\u2077", "8": "\u2078", "9": "\u2079",
+  "+": "\u207A", "-": "\u207B",
+  "n": "\u207F", "m": "\u1D50", "x": "\u02E3",
+  "c": "\u1D9C", "d": "\u1D48",
+};
+
+// Unicode subscript lookup
+const TO_SUB = {
+  "0": "\u2080", "1": "\u2081", "2": "\u2082", "3": "\u2083", "4": "\u2084",
+  "5": "\u2085", "6": "\u2086", "7": "\u2087", "8": "\u2088", "9": "\u2089",
+  "+": "\u208A", "-": "\u208B",
+  "a": "\u2090", "e": "\u2091", "n": "\u2099", "x": "\u2093",
+  "b": "b", "c": "c", "d": "d", "y": "y", "p": "p", "r": "r",
+};
+
+const SUP_RANGE_RE = /[\uE000-\uE011]+/g;
+const SUB_RANGE_RE = /[\uE020-\uE028]+/g;
+
+function phToPlain(s) { return [...s].map(c => PH_PLAIN[c] ?? c).join(""); }
+function phToSup(s)   { return [...s].map(c => { const p = PH_PLAIN[c]; return p ? (TO_SUP[p] ?? p) : c; }).join(""); }
+function phToSub(s)   { return [...s].map(c => { const p = PH_PLAIN[c]; return p ? (TO_SUB[p] ?? p) : c; }).join(""); }
+
+function resolveSuperscriptPH(text) {
+  return text.replace(SUP_RANGE_RE, (match, offset) => {
+    const before = text.slice(Math.max(0, offset - 8), offset);
+    const trimmed = before.replace(/\s+$/, "");
+    // After log/ln → subscript
+    if (/(?:log|ln)$/.test(trimmed)) return phToSub(match);
+    // After letter, ), ′, °, trig, or a subscript placeholder (which represents a letter) → superscript
+    if (/[a-zA-Z)\u2032\u00B0\uE020-\uE028]$/.test(trimmed)) return phToSup(match);
+    if (/(?:sin|cos|tan|sec|csc|cot)$/.test(trimmed)) return phToSup(match);
+    // Default: plain
+    return phToPlain(match);
+  });
+}
+
+function resolveSubscriptPH(text) {
+  return text.replace(SUB_RANGE_RE, (match, offset) => {
+    const before = text.slice(Math.max(0, offset - 5), offset);
+    const trimmed = before.replace(/\s+$/, "");
+    // After a letter or closing paren/bracket → subscript (xₙ, aₖ, log₁₀)
+    if (/[a-zA-Z)\]]$/.test(trimmed)) return phToSub(match);
+    // After anything else (digit, operator, space) → plain variable
+    return phToPlain(match);
+  });
+}
+
+
+/* ═════════════════════════════════════════════════════════════════════════════
+ * Sentence start repairs
+ * ═════════════════════════════════════════════════════════════════════════════ */
+/* Start-of-text fixes: first letter/word lost during PDF extraction */
+const START_FIXES = [
+  [/^he /, "The "],
+  [/^onsider /, "Consider "],
+  [/^is given/, "It is given"],
+  [/^iven /, "Given "],
+  [/^ive /, "Give "],
+  [/^ow many/, "How many"],
+  [/^ow /, "How "],
+  [/^ome /, "Some "],
+  [/^ach /, "Each "],
+  [/^hen /, "When "],
+  [/^ind /, "Find "],
+  [/^uppose /, "Suppose "],
+  [/^xpress /, "Express "],
+  [/^olve /, "Solve "],
+  [/^ence /, "Hence "],
+  [/^et ([a-zA-Z])/, "Let $1"],
+  [/^alculate /, "Calculate "],
+  [/^implify /, "Simplify "],
+  [/^etermine /, "Determine "],
+  [/^ote /, "Note "],
+  [/^riangles/, "Triangles"],
+  [/^line (is|segment)/, "A line $1"],
+  [/^right /, "A right "],
+  [/^region /, "A region "],
+  [/^tangent /, "A tangent "],
+  [/^circle /, "A circle "],
+  [/^curve /, "A curve "],
+  [/^infinitely /, "An infinitely "],
+  [/^this question/, "In this question"],
+  [/^the figure/, "In the figure"],
+  [/^the expansion/, "In the expansion"],
+  [/^line ([a-z]) /, "The line $1 "],
 ];
 
+const SENTENCE_FIXES = [
+  [/\. hat is/g, ". What is"], [/\. hat are/g, ". What are"],
+  [/\. hat can/g, ". What can"], [/\. hich/g, ". Which"],
+  [/\. onsider/g, ". Consider"], [/\. uppose/g, ". Suppose"],
+  [/\. herefore/g, ". Therefore"], [/\. xpress/g, ". Express"],
+  [/\. omplete/g, ". Complete"], [/\. implify/g, ". Simplify"],
+  [/\. ind /g, ". Find "], [/\. he /g, ". The "],
+  [/\. his /g, ". This "], [/\. ll /g, ". All "],
+  [/\. et /g, ". Let "], [/\. ence/g, ". Hence"],
+  [/\. ote /g, ". Note "], [/\. ow many/g, ". How many"],
+  [/\. ow,/g, ". Now,"], [/\. se /g, ". Use "],
+  [/\. olve/g, ". Solve"], [/\. f /g, ". If "],
+  [/\. o /g, ". So "], [/\. iven/g, ". Given"],
+  [/\. ondition/g, ". Condition"], [/\. tate/g, ". State"],
+  [/\. alculate/g, ". Calculate"], [/\. etermine/g, ". Determine"],
+  [/\. ow /g, ". How "], [/\. or /g, ". For "],
+  // After closing paren/bracket (lost capital after domain statement)
+  [/\) hat is/g, ") What is"], [/\) hat are/g, ") What are"],
+  [/\) ind /g, ") Find "], [/\) hen /g, ") When "],
+  [/\) ow /g, ") How "], [/\) etermine/g, ") Determine"],
+  // Broader fixes for lost capitals after various separators
+  [/(\d) hich /g, "$1. Which "],
+  [/(\d) hat is/g, "$1. What is"],
+  // Fallback: isolated " hich" without period (lost sentence boundary)
+  [/([^\s.]) hich /g, "$1. Which "],
+];
+
+
+/* ═════════════════════════════════════════════════════════════════════════════
+ * Main cleaning function
+ * ═════════════════════════════════════════════════════════════════════════════ */
 function cleanText(text) {
   if (!text) return text;
-  let result = text;
-  for (const [from, to] of Object.entries(CHAR_MAP)) {
-    result = result.replaceAll(from, to);
+  let r = text;
+
+  // Phase 1a: Replace superscript block chars with PUA placeholders
+  for (const [from, to] of Object.entries(SUP_PH)) r = r.replaceAll(from, to);
+
+  // Phase 1b: Replace subscript block chars with PUA placeholders
+  for (const [from, to] of Object.entries(SUB_PH)) r = r.replaceAll(from, to);
+
+  // Phase 1c: Simple character map
+  for (const [from, to] of Object.entries(CHAR_MAP)) r = r.replaceAll(from, to);
+
+  // Phase 2: Resolve math placeholders in context
+  r = resolveSuperscriptPH(r);
+  r = resolveSubscriptPH(r);
+
+  // Phase 2.5: Normalize whitespace before sentence repairs
+  r = r.replace(/\s+/g, " ").trim();
+
+  // Phase 3a: Fix broken sentence starts (missing first letter from PDF extraction)
+  for (const [pat, rep] of START_FIXES) {
+    if (pat.test(r)) { r = r.replace(pat, rep); break; }
   }
-  // Fix broken sentence starts after Ǥ → ". " replacement
-  for (const [pattern, replacement] of SENTENCE_FIXES) {
-    result = result.replace(pattern, replacement);
-  }
-  // Normalize whitespace
-  result = result.replace(/\s+/g, " ").trim();
-  return result;
+
+  // Phase 3b: Fix broken sentence starts after ". " (Ǥ replacement artifact)
+  for (const [pat, rep] of SENTENCE_FIXES) r = r.replace(pat, rep);
+
+  // Phase 4: Greek iota used as degree (30ι → 30°)
+  r = r.replace(/(\d)\u03B9/g, "$1\u00B0");
+
+  // Phase 5: Normalize whitespace & cleanup
+  r = r.replace(/\s+/g, " ").trim();
+  r = r.replace(/\u2260=/g, "\u2260"); // fix ≠= → ≠
+  r = r.replace(/\u0338=/g, "\u2260"); // fix ̸= → ≠
+
+  return r;
 }
 
 function cleanOptions(options) {
@@ -233,27 +319,19 @@ function cleanOptions(options) {
   return cleaned;
 }
 
+
+/* ═════════════════════════════════════════════════════════════════════════════
+ * Output
+ * ═════════════════════════════════════════════════════════════════════════════ */
 const TOPIC_DISPLAY = {
-  "algebra": "Algebra",
-  "calculus": "Calculus",
-  "combinatorics": "Combinatorics",
-  "functions": "Functions",
-  "geometry": "Geometry",
-  "inequalities": "Inequalities",
-  "logic": "Logic & Reasoning",
-  "number-theory": "Number Theory",
-  "probability": "Probability",
-  "proof": "Proof",
-  "sequences": "Sequences & Series",
-  "statistics": "Statistics",
-  "trigonometry": "Trigonometry",
+  "algebra": "Algebra", "calculus": "Calculus", "combinatorics": "Combinatorics",
+  "functions": "Functions", "geometry": "Geometry", "inequalities": "Inequalities",
+  "logic": "Logic & Reasoning", "number-theory": "Number Theory",
+  "probability": "Probability", "proof": "Proof", "sequences": "Sequences & Series",
+  "statistics": "Statistics", "trigonometry": "Trigonometry",
 };
 
-const DIFFICULTY_MAP = {
-  easy: "standard",
-  medium: "standard",
-  hard: "challenging",
-};
+const DIFFICULTY_MAP = { easy: "standard", medium: "standard", hard: "challenging" };
 
 const questions = raw.questions.map((q) => ({
   id: q.id,
@@ -270,20 +348,25 @@ const questions = raw.questions.map((q) => ({
   sourcePdf: q.source_pdf || "",
 }));
 
-// Build stats
 const years = [...new Set(questions.map((q) => q.year))].sort();
 const topics = [...new Set(questions.flatMap((q) => q.topics))].sort();
 console.log(`Cleaned ${questions.length} questions`);
 console.log(`Years: ${years.join(", ")}`);
 console.log(`Topics: ${topics.join(", ")}`);
-console.log(`Papers: 1, 2`);
+
+// Sample: show the specific problem question (2017 P1 Q2)
+const sample = questions.find(q => q.id === "2017-P1-Q2");
+if (sample) {
+  console.log("\n--- Sample: 2017 P1 Q2 ---");
+  console.log("TEXT:", sample.text.slice(0, 200));
+  console.log("OPTIONS:", JSON.stringify(sample.options));
+}
 
 const output = {
   meta: {
-    source: "TMUA Past Papers (Specimen, 2016–2023)",
+    source: "TMUA Past Papers (Specimen, 2016\u20132023)",
     totalQuestions: questions.length,
-    years,
-    topics,
+    years, topics,
     papers: [1, 2],
     lastUpdated: new Date().toISOString().slice(0, 10),
   },
@@ -291,4 +374,4 @@ const output = {
 };
 
 writeFileSync(outputPath, JSON.stringify(output, null, 2));
-console.log(`Written to ${outputPath}`);
+console.log(`\nWritten to ${outputPath}`);

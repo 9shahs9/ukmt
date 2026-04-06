@@ -40,8 +40,6 @@ export function TMUAApp() {
 
   /* ───── Learn state ───── */
   const [selectedTopic, setSelectedTopic] = useState<string>(TMUA_TOPICS[0].id);
-  const [filterYear, setFilterYear] = useState<string>("all");
-  const [filterPaper, setFilterPaper] = useState<string>("all");
 
   /* ───── Sprint / Practice state ───── */
   const [examMode, setExamMode] = useState<TMUAExamMode>("practice");
@@ -156,9 +154,7 @@ export function TMUAApp() {
 
   /* ───── Sprint builder ───── */
   const buildSprint = useCallback((mode: TMUAExamMode) => {
-    let qs = allQuestions.filter((q) => q.topics.includes(selectedTopic));
-    if (filterYear !== "all") qs = qs.filter((q) => q.year === filterYear);
-    if (filterPaper !== "all") qs = qs.filter((q) => q.paper === Number(filterPaper));
+    const qs = allQuestions.filter((q) => q.topics.includes(selectedTopic));
 
     const excluded = new Set(progress.seenQuestionIds ?? []);
     const unseen = qs.filter((q) => !excluded.has(q.id));
@@ -180,7 +176,7 @@ export function TMUAApp() {
     }
     setExamStartTime(Date.now());
     setTab("practice");
-  }, [allQuestions, selectedTopic, filterYear, filterPaper, progress.seenQuestionIds]);
+  }, [allQuestions, selectedTopic, progress.seenQuestionIds]);
 
   /* ───── Submit sprint ───── */
   const submitSprint = useCallback(() => {
@@ -196,11 +192,9 @@ export function TMUAApp() {
     setTab("feedback");
 
     const topics = [...new Set(activeQuestions.flatMap((q) => q.topics))];
-    const year = activeQuestions[0]?.year ?? null;
-    const paper = activeQuestions[0]?.paper ?? null;
     const timeUsed = Math.round((Date.now() - examStartTime) / 1000);
 
-    const next = updateTMUAProgressAfterExam(progress, examMode, paper, year, topics, computed, timeUsed);
+    const next = updateTMUAProgressAfterExam(progress, examMode, null, null, topics, computed, timeUsed);
     setProgress(next);
     saveTMUAProgress(next);
   }, [activeQuestions, answers, examMode, examStartTime, progress]);
@@ -289,14 +283,8 @@ export function TMUAApp() {
                 ))}
               </div>
 
-              <h3>Past Paper Coverage (Specimen–2023)</h3>
-              <p className="muted">Indexed: <strong>{allQuestions.length}</strong> questions across {bank.meta.years.length} years</p>
-              <div className="chips">
-                {(bank.meta.years ?? []).map((y) => {
-                  const count = allQuestions.filter((q) => q.year === y).length;
-                  return <span key={y}>{y} ({count})</span>;
-                })}
-              </div>
+              <h3>Question Bank</h3>
+              <p className="muted">Indexed: <strong>{allQuestions.length}</strong> practice questions across {bank.meta.topics.length} topics</p>
             </>
           )}
         </section>
@@ -334,28 +322,10 @@ export function TMUAApp() {
               </div>
             </div>
 
-            {/* Right column: Filters + past paper PDFs */}
+            {/* Right column: question count + past paper PDFs */}
             <div>
-              <h3>Sprint Filters</h3>
-              <label>Year</label>
-              <select value={filterYear} onChange={(e) => setFilterYear(e.target.value)}>
-                <option value="all">All Years</option>
-                {(bank?.meta.years ?? []).map((y) => <option key={y} value={y}>{y}</option>)}
-              </select>
-              <label style={{ marginTop: ".4rem", display: "block" }}>Paper</label>
-              <select value={filterPaper} onChange={(e) => setFilterPaper(e.target.value)}>
-                <option value="all">Both Papers</option>
-                <option value="1">Paper 1: Mathematical Thinking</option>
-                <option value="2">Paper 2: Mathematical Reasoning</option>
-              </select>
-
-              <p className="muted" style={{ marginTop: ".6rem" }}>
-                {allQuestions.filter((q) => {
-                  if (!q.topics.includes(selectedTopic)) return false;
-                  if (filterYear !== "all" && q.year !== filterYear) return false;
-                  if (filterPaper !== "all" && q.paper !== Number(filterPaper)) return false;
-                  return true;
-                }).length} questions match
+              <p className="muted">
+                {allQuestions.filter((q) => q.topics.includes(selectedTopic)).length} questions available for {activeTopic.label}
               </p>
 
               <h3 style={{ marginTop: "1rem" }}>Past Paper PDFs</h3>
@@ -407,17 +377,12 @@ export function TMUAApp() {
           ) : (
             <article className={`question-card ${currentQ.difficulty === "challenging" ? "hard" : ""}`}>
               <div className="q-header">
-                <span className="q-badge">{currentQ.year} P{currentQ.paper} Q{currentQ.questionNumber}</span>
+                <span className="q-badge">Q{currentIdx + 1}</span>
                 <span className="muted">{currentQ.topicDisplay}</span>
               </div>
 
               <div className="q-stem">
                 <MathText text={currentQ.text} />
-                {currentQ.sourcePdf && (
-                  <p className="muted" style={{ marginTop: ".5rem", fontSize: ".82rem" }}>
-                    <a href={currentQ.sourcePdf} target="_blank" rel="noreferrer">View original PDF</a>
-                  </p>
-                )}
               </div>
 
               <div className="options-grid">
@@ -482,14 +447,8 @@ export function TMUAApp() {
                   return (
                     <article key={`fb-${q.id}`} className={correct ? "correct" : "incorrect"}>
                       <h3>Q{idx + 1} — {q.topicDisplay}</h3>
-                      <p className="muted">{q.year} Paper {q.paper} Q{q.questionNumber}</p>
                       <p>Your answer: <strong>{r?.selected ?? "—"}</strong> | Correct: <strong>{q.correctAnswer}</strong></p>
                       <p><strong>Solution:</strong> <MathText text={q.workedSolution} /></p>
-                      {q.sourcePdf && (
-                        <p className="muted" style={{ fontSize: ".82rem" }}>
-                          <a href={q.sourcePdf} target="_blank" rel="noreferrer">View original PDF</a>
-                        </p>
-                      )}
                     </article>
                   );
                 })}
@@ -510,7 +469,6 @@ export function TMUAApp() {
                     <summary className="history-summary">
                       <span className="history-date">{rec.date}</span>
                       <strong>{rec.mode === "timed" ? "Timed" : "Practice"} — {rec.topics.join(", ")}</strong>
-                      {rec.year && <span className="muted"> · {rec.year}</span>}
                       <span className={`history-score ${rec.score === rec.total ? "perfect" : wrongCount > rec.total / 2 ? "weak" : ""}`}>
                         {rec.score}/{rec.total}
                       </span>

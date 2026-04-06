@@ -1,8 +1,8 @@
 export type TMUAQuestion = {
   id: string;
-  year: string;
-  paper: 1 | 2;
-  questionNumber: number;
+  year?: string;
+  paper?: 1 | 2;
+  questionNumber?: number;
   text: string;
   options: Record<string, string>;
   correctAnswer: string;
@@ -10,14 +10,13 @@ export type TMUAQuestion = {
   topics: string[];
   topicDisplay: string;
   difficulty: string;
-  sourcePdf: string;
+  sourcePdf?: string;
 };
 
 export type TMUAQuestionBank = {
   meta: {
     source: string;
     totalQuestions: number;
-    years: string[];
     topics: string[];
     papers: number[];
     lastUpdated: string;
